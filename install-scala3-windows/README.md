@@ -1,5 +1,210 @@
 # Install Scala 3 in Windows
 
+## Install with the Scala Installer (recommended way)
+
+https://git.io/coursier-cli-windows-exe
+
+![](image/README/ScalaInstaller.png)
+
+```
+cs install scala3-compiler
+cs install scala3
+```
+
+## Install with sbt (my recommended way)
+
+- install JDK
+
+- install sbt
+
+https://www.scala-sbt.org/download.html
+
+C:\Apps\sbt\
+
+## Use IntelliJ as Scala IDE
+
+### Install Scala plugin
+
+https://plugins.jetbrains.com/plugin/1347-scala
+
+## Set up Java SDK
+
+Choose jdk 17
+
+## Set up Scala SDK
+
+Download 3.1.0
+
+C:\Users\...\.ivy2\cache
+
+### Create a new Scala3 project with sbt
+
+sbt new scala/scala3.g8
+
+YesScala3
+
+```dos
+C:\Code\MyScala>sbt new scala/scala3.g8
+WARNING: A terminally deprecated method in java.lang.System has been called
+WARNING: System::setSecurityManager has been called by sbt.TrapExit$ (file:/C:/Users/x239757/.sbt/boot/scala-2.12.14/org.scala-sbt/sbt/1.5.8/run_2.12-1.5.8.jar)
+WARNING: Please consider reporting this to the maintainers of sbt.TrapExit$
+WARNING: System::setSecurityManager will be removed in a future release
+[info] welcome to sbt 1.5.8 (Oracle Corporation Java 17)
+[info] set current project to new (in build file:/C:/Users/x239757/AppData/Local/Temp/sbt_78b9ca43/new/)
+
+A template to demonstrate a minimal Scala 3 application
+
+name [Scala 3 Project Template]: YesScala3
+
+Template applied in C:\Code\MyScala\.\yesscala3
+```
+
+### Open Scala3 project with IntelliJ
+
+Very simple.
+
+![](image/README/run_scala_in_intellij.png)
+
+![](image/README/test_scala_in_intellij.png)
+
+## Use VSC as Scala IDE
+
+### Install the Metals extension
+
+### Metals settings in VSC
+
+Ctrl+,
+
+settings.json
+
+```
+  "metals.sbtScript": "C:\\Apps\\sbt",
+  "java.home": "C:\\Apps\\Java\\jdk-17",
+  "metals.javaHome": "C:\\Apps\\Java\\jdk-17"
+```
+
+### Create a new Scala3 project with sbt
+
+sbt new scala/scala3.g8
+
+```dos
+C:\Code\MyScala>sbt new scala/scala3.g8
+[info] [launcher] getting org.scala-sbt sbt 1.5.8  (this may take some time)...
+[info] [launcher] getting Scala 2.12.14 (for sbt)...
+[info] welcome to sbt 1.5.8 (Oracle Corporation Java 16.0.1)
+[info] set current project to new (in build file:/C:/Users/x239757/AppData/Local/Temp/sbt_7f0ee891/new/)
+[info] downloading https://repo1.maven.org/maven2/org/scala-sbt/sbt-giter8-resolver/sbt-giter8-resolver_2.12/0.13.1/sbt-giter8-resolver_2.12-0.13.1.jar ...
+[info] downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.14/scala-library-2.12.14.jar ...
+...
+[info] downloading https://repo1.maven.org/maven2/org/typelevel/macro-compat_2.12/1.1.1/macro-compat_2.12-1.1.1.jar ...
+[info]  [SUCCESSFUL ] org.fusesource.jansi#jansi;1.18!jansi.jar (131ms)
+[info]  [SUCCESSFUL ] net.java.dev.jna#jna-platform;4.1.0!jna-platform.jar (381ms)
+[info]  [SUCCESSFUL ] io.argonaut#argonaut_2.12;6.2.4!argonaut_2.12.jar (140ms)
+[info]  [SUCCESSFUL ] org.typelevel#macro-compat_2.12;1.1.1!macro-compat_2.12.jar (116ms)
+[info]  [SUCCESSFUL ] com.chuusai#shapeless_2.12;2.3.3!shapeless_2.12.jar(bundle) (355ms)
+[info]  [SUCCESSFUL ] org.scala-lang#scala-reflect;2.12.14!scala-reflect.jar (579ms)
+[info] resolving Giter8 0.13.1...
+
+A template to demonstrate a minimal Scala 3 application
+
+A template to demonstrate a minimal Scala 3 application
+
+name [Scala 3 Project Template]: hello-world
+
+Template applied in C:\Code\MyScala\.\hello-world
+```
+
+### Open Scala3 project with VSC
+
+Import build
+
+Run with sbt
+
+```dos
+sbt
+~run
+```
+
+![](image/README/sbt_vsc.png)
+
+```dos
+C:\Code\MyScala\hello-world>sbt
+[info] welcome to sbt 1.5.8 (Oracle Corporation Java 16.0.1)
+[info] loading settings for project hello-world-build-build from metals.sbt ...
+[info] loading project definition from C:\Code\MyScala\hello-world\project\project
+[info] loading settings for project hello-world-build from metals.sbt ...
+[info] loading project definition from C:\Code\MyScala\hello-world\project
+[success] Generated .bloop\hello-world-build.json
+[success] Total time: 1 s, completed Dec 24, 2021, 7:17:06 AM
+[info] loading settings for project root from build.sbt ...
+[info] set current project to hello-world (in build file:/C:/Code/MyScala/hello-world/)
+[info] sbt server started at local:sbt-server-d3de80f517d8ecf51393
+[info] started sbt server
+sbt:hello-world> ~run
+[info] compiling 1 Scala source to C:\Code\MyScala\hello-world\target\scala-3.1.0\classes ...
+[info] running hello
+Hello world!
+I was compiled by Scala 3. :)
+[success] Total time: 5 s, completed Dec 24, 2021, 7:17:28 AM
+[info] 1. Monitoring source files for root/run...
+[info]    Press <enter> to interrupt or '?' for more options.
+```
+
+### Run Scala3 project in VSC
+
+- via code lenses
+
+![](image/README/run_scala_in_vsc_with_code_lenses.png)
+
+- via a launch.json configuration
+
+![](image/README/run_scala_in_vsc_with_code_lenses.png)
+
+launch.json
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    // Main class configuration
+    {
+      "type": "scala",
+      "request": "launch",
+      // configuration name visible for the user
+      "name": "Launch Main",
+      // full name of the class to run
+      "mainClass": "hello",
+      // optional arguments for the main class
+      "args": [],
+      // optional jvm properties to use
+      "jvmOptions": []
+    },
+    // Test class configuration
+    {
+      "type": "scala",
+      "request": "launch",
+      // configuration name visible for the user
+      "name": "Launch Test",
+      // full name of the class to run
+      "testClass": "Test1"
+    }
+    // Attach debugger when running via:
+    // `-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:5005`
+    {
+      "type": "scala",
+      "request": "attach",
+      "name": "Attach debugger",
+      // name of the module that is being debugging
+      "buildTarget": "root",
+      // Host of the jvm to connect to
+      "hostName": "localhost",
+      // Port to connect to
+      "port": 5005
+    }
+  ]
+}
+```
+
 ## Install Coursier
 
 ```dos
@@ -151,6 +356,14 @@ The REPL has several commands available:
 scala> :quit
 ```
 
+![](image/README/hello_scala3.png)
+
 ## Install Scala 3 with GitHub download
 
 https://github.com/lampepfl/dotty/releases/tag/3.1.0
+
+## Scastie - Scala playground
+
+Scastie is an online “playground” where you can experiment with Scala examples to see how things work, with access to all Scala compilers and published libraries.
+
+https://scastie.scala-lang.org/

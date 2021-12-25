@@ -1,5 +1,2 @@
-object HelloScala3 {
-  def main(args: Array[String]) = {
-    println("Hello Scala 3!")
-  }
-}
+@main def run() =
+  println("Hello, Scala3!")
