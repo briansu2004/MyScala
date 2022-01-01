@@ -1,10 +1,12 @@
+import scala.annotation.tailrec
+
 object RecursiveHappy {
-  def happy(): Unit = {
-    println("I am happy");
-    happy();
+  @tailrec def happy(): Unit = {
+    println("I am happy")
+    happy()
   }
 
   def main(args:Array[String]): Unit = {
-    happy();
+    happy()
   }
 }
