@@ -12,7 +12,6 @@ object P01 {
     case h :: Nil => h
     case _ :: tail => lastWithRecursion(tail)
     case _ => throw new NoSuchElementException
-
   }
 
   def main(args: Array[String]): Unit = {

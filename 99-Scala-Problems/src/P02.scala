@@ -5,11 +5,11 @@
 
 object P02 {
   def secondLast[T](l: List[T]): T = {
-    l.last
+    l.init.last
   }
 
   def secondLastWithRecursion[T](l: List[T]): T = l match {
-    case h :: Nil => h
+    case h :: _ :: Nil => h
     case _ :: tail => secondLastWithRecursion(tail)
     case _ => throw new NoSuchElementException
 
