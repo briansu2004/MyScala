@@ -20,6 +20,7 @@ object P23 {
     }
 
   // My solution
+  // has issues?
   def randomSelectMine[T](n: Int, l: List[T]): List[T] = {
     val r = scala.util.Random
     List.range(0, n).flatMap(_ => {
