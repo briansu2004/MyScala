@@ -10,7 +10,7 @@ import java.time.{Duration, LocalDateTime}
 
 object P20 {
   // match
-  def removeAt[A](n: Int, ls: List[A]): (List[A], A) = ls.splitAt(n) match {
+  def removeAt[T](n: Int, l: List[T]): (List[T], T) = l.splitAt(n) match {
     case (Nil, _) if n < 0 => throw new NoSuchElementException
     case (pre, e :: post) => (pre ::: post, e)
     case (pre, Nil) => throw new NoSuchElementException
