@@ -63,3 +63,83 @@ Need to understand more on the solution!
 ## P28
 
 The solution http://aperiodic.net/phil/scala/s-99/p28.scala is not compliable in IJ.
+
+## Where are P29 and P30?
+
+## P31
+
+Be careful of LazyList
+
+Exception: "self-referential LazyList or a derivation thereof has no more elements"
+
+Stream is deprecated
+
+(Since version 2.13.0) Use LazyList (which is fully lazy) instead of Stream (which has a lazy tail only)
+
+#:: is the cons operator for Streams / LazyLists.
+
+In other words, #:: is to streams / LazyLists and :: is to Lists.
+
+```
+x #:: xs
+```
+
+===>
+
+```
+Stream.cons(x, xs)
+```
+
+## P36
+
+Map
+
+Additions and updates +, ++, updated, which let you add new bindings to a map or change existing bindings.
+
+List.make(v.\_2, v.\_1)
+
+==>
+
+(v.\_1, v.\_2)
+
+Looks like List.make is a very old method?
+
+## Where are P42, P43, P44 and P45?
+
+## P46
+
+How to get the function name in Scala?
+
+## William Zhi 2021-01-05
+
+Scala case class vs Java record class
+
+mapPar(2)(...)
+
+A => B
+
+Container?
+
+Scala interview:
+
+- Spark
+
+- ?
+
+Scala Stream vs Java Streaming API
+
+Monad?
+
+    - flatMap
+    - tailrecM
+    - pure
+
+map can be implemented with flatMap
+
+Option
+
+Scala Option vs Java Option
+
+Scala Quill
+
+## ...
