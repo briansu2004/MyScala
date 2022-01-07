@@ -142,4 +142,43 @@ Scala Option vs Java Option
 
 Scala Quill
 
+## P48
+
+P48 (\*\*) Truth tables for logical expressions (3).
+
+Omitted for now.
+
+???
+
+## P49
+
+The reflected binary code (RBC), also known just as reflected binary (RB) or Gray code after Frank Gray, is an ordering of the binary numeral system such that two successive values differ in only one bit (binary digit).
+
+```
+Decimal Binary Gray Decimal
+of Gray
+0 0000 0000 0
+1 0001 0001 1
+2 0010 0011 3
+3 0011 0010 2
+4 0100 0110 6
+5 0101 0111 7
+6 0110 0101 5
+7 0111 0100 4
+8 1000 1100 12
+9 1001 1101 13
+10 1010 1111 15
+11 1011 1110 14
+12 1100 1010 10
+13 1101 1011 11
+14 1110 1001 9
+15 1111 1000 8
+```
+
+## P50
+
+Need to come back for it.
+
+Not done yet.
+
 ## ...
