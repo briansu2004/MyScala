@@ -181,4 +181,12 @@ Need to come back for it.
 
 Not done yet.
 
+## Where are P51, P52, P53?
+
+## P44 Omitted
+
+P54 Omitted; our tree representation will only allow well-formed trees.
+
+Score one for static typing.
+
 ## ...
