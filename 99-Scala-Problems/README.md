@@ -175,7 +175,7 @@ of Gray
 15 1111 1000 8
 ```
 
-## P50
+## P50 (unfinished)
 
 Need to come back for it.
 
@@ -188,5 +188,157 @@ Not done yet.
 P54 Omitted; our tree representation will only allow well-formed trees.
 
 Score one for static typing.
+
+## Binary Trees
+
+A binary tree is either empty or it is composed of a root element and two successors, which are binary trees themselves.
+
+We shall use the following classes to represent binary trees. An End is equivalent to an empty tree. A Branch has a value, and two descendant trees. The toString functions are relatively arbitrary, but they yield a more compact output than Scala's default. Putting a plus in front of the T makes the class covariant; it will be able to hold subtypes of whatever type it's created for. (This is important so that End can be a singleton object; as a singleton, it must have a specific type, so we give it type Nothing, which is a subtype of every other type.)
+
+```scala
+sealed abstract class Tree[+T]
+case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
+  override def toString = "T(" + value.toString + " " + left.toString + " " + right.toString + ")"
+}
+case object End extends Tree[Nothing] {
+  override def toString = "."
+}
+object Node {
+  def apply[T](value: T): Node[T] = Node(value, End, End)
+}
+```
+
+![](image/README/BinaryTreeExample01.png)
+
+The example tree here can be described as -
+
+```scala
+Node('a',
+     Node('b', Node('d'), Node('e')),
+     Node('c', End, Node('f', Node('g'), End)))
+```
+
+A tree with only a root node would be Node('a') and an empty tree would be End.
+
+## P55
+
+print2DUtil needs to be modified further to get a better print in 2D.
+
+## P56
+
+```scala
+object Node {
+  def apply[T](value: T): Node[T] = Node(value, End, End)
+}
+```
+
+This makes differences on the compiling.
+
+# P57
+
+```dos
+C:\Code\MyScala\99-Scala-Problems\src\P57_2.scala
+Tree is already defined as class Tree
+sealed abstract class Tree[+T] {
+```
+
+Have to move each Tree definition to a separate package to avoid the conflicts.
+
+## Variance : Covariance vs Contravariance vs Invariance
+
+```scala
+class Foo[+A] // A covariant class
+class Bar[-A] // A contravariant class
+class Baz[A]  // An invariant class
+```
+
+https://docs.scala-lang.org/tour/variances.html
+
+## Generate-and-Test Paradigm
+
+A method for silving design problems when a complete preliminary design can be performed, then evaluated, and iterate the process if the evaluation is not satisfactory. It can be used only for very simple design problems.
+
+A trial and error method of problem solving where a possible solution is generated and tested to check if it is successful. If it is not successful, then another possible solution is generated and tested and this goes on until a satisfactory solution is found. The solution found may not be optimal and not all possible scenarios are tested.
+
+Generate and Test Search is a heuristic search technique based on Depth First Search with Backtracking which guarantees to find a solution if done systematically and there exists a solution. In this technique, all the solutions are generated and tested for the best solution. It ensures that the best solution is checked against all possible generated solutions.
+
+It is also known as British Museum Search Algorithm as it’s like looking for an exhibit at random or finding an object in the British Museum by wandering randomly.
+
+![](image/README/Generate-and-Test.png)
+
+## Types of binary trees
+
+In a completely balanced binary tree, the following property holds for every node: The number of nodes in its left subtree and the number of nodes in its right subtree are almost equal, which means their difference is not greater than one.
+
+In a height-balanced binary tree, the following property holds for every node: The height of its left subtree and the height of its right subtree are almost equal, which means their difference is not greater than one.
+
+![](image/README/type_of_binary_trees.png)
+
+## P60
+
+It has a "typo" -
+
+What is the maximum number of nodes it can contain?
+
+It should be 2^H - 1 instead of 2H - 1.
+
+Also it takes long time to calculate large numbers.
+
+```dos
+For a height-balanced binary tree of height 50, the number of nodes are between -1408458270 and 2147483646.
+Elapsed:	70 seconds
+For a height-balanced binary tree with 50 nodes, the hight is between 6 and 7.
+Elapsed:	0 seconds
+```
+
+## P63
+
+```
+            1
+      /           \
+     2             3
+   /   \         /   \
+  4     5       6     7
+ / \   / \     / \   / \
+8   9 10 11   12 13 14 15
+```
+
+## P64 (unfinished)
+
+case-to-case inheritance is prohibited
+
+```dos
+C:\Code\MyScala\99-Scala-Problems\src\binarytree64\Tree64.scala:105:12
+case class PositionedNode has case ancestor binarytree64.Node, but case-to-case inheritance is prohibited. To overcome this limitation, use extractors to pattern match on non-leaf nodes.
+case class PositionedNode[+T](override val value: T, override val left: Tree[T], override val right: Tree[T], x: Int, y: Int) extends Node[T](value, left, right) {
+```
+
+How inheritance can be achieved in case classes?
+
+The answer is simple: Case Class can extend another Class, trait or Abstract Class.
+
+But still have issues on this P.
+
+Go back to it.
+
+## Case Class
+
+A Scala Case Class is like a regular class, except it is good for modeling immutable data. It also serves useful in pattern matching, such a class has a default apply() method which handles object construction. A scala case class also has all vals, which means they are immutable.
+
+Since a Scala case class is immutable, we might sometimes need a copy to make changes in without changing the original. So, we now see how to create a shallow copy of it.
+
+## Shallow copy vs deep copy
+
+A deep copy is a copy to another object where any changes we make to it don't reflect in the original object.
+
+![](image/README/deep_copy.png)
+
+A shallow copy, however, is one where changes to the copy do reflect in the original.
+
+![](image/README/shallow_copy.png)
+
+## P65 (unfinished)
+
+Same issue like P64
 
 ## ...
