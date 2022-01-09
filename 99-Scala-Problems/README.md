@@ -337,8 +337,22 @@ A shallow copy, however, is one where changes to the copy do reflect in the orig
 
 ![](image/README/shallow_copy.png)
 
-## P65 (unfinished)
+## P65, P66 (unfinished)
 
 Same issue like P64
+
+## Tree Traversals (Inorder, Preorder and Postorder)
+
+![](image/README/Tree_Traversals.png)
+
+Depth First Traversals:
+
+(a) Inorder (Left, Root, Right) : 4 2 5 1 3
+
+(b) Preorder (Root, Left, Right) : 1 2 4 5 3
+
+(c) Postorder (Left, Right, Root) : 4 5 2 3 1
+
+Breadth-First or Level Order Traversal: 1 2 3 4 5
 
 ## ...
