@@ -343,7 +343,7 @@ Same issue like P64
 
 ## Tree Traversals (Inorder, Preorder and Postorder)
 
-![](image/README/Tree_Traversals.png)
+![](image/README/Tree_Traversals_01.png)
 
 Depth First Traversals:
 
@@ -354,5 +354,15 @@ Depth First Traversals:
 (c) Postorder (Left, Right, Root) : 4 5 2 3 1
 
 Breadth-First or Level Order Traversal: 1 2 3 4 5
+
+![](image/README/Tree_Traversals_02.png)
+
+## P70B
+
+Omitted; we can only create well-formed trees.
+
+# P70C
+
+The program takes long time to stop.
 
 ## ...
