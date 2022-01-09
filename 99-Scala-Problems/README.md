@@ -361,8 +361,77 @@ Breadth-First or Level Order Traversal: 1 2 3 4 5
 
 Omitted; we can only create well-formed trees.
 
-# P70C
+## P70C
 
 The program takes long time to stop.
+
+## P70
+
+The node string output for that MTree should be `afg^^c^bd^e^^` instead of `afg^^c^bd^e^^^`
+
+MTree.string2MTree("afg^^c^bd^e^^^") doesn't work.
+
+```dos
+Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String index out of range: 14
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+	at java.base/java.lang.String.charAt(String.java:1512)
+	at scala.collection.StringOps$.apply$extension(StringOps.scala:185)
+	at multiwaytree70.MTree$.nextStrBound$1(multiwaytree70.scala:21)
+	at multiwaytree70.MTree$.splitChildStrings$1(multiwaytree70.scala:25)
+	at multiwaytree70.MTree$.splitChildStrings$1(multiwaytree70.scala:26)
+	at multiwaytree70.MTree$.splitChildStrings$1(multiwaytree70.scala:26)
+	at multiwaytree70.MTree$.splitChildStrings$1(multiwaytree70.scala:26)
+	at multiwaytree70.MTree$.string2MTree(multiwaytree70.scala:28)
+	at P70$.main(P70.scala:31)
+	at P70.main(P70.scala)
+```
+
+Use the correct string for P71 and P72.
+
+## P71
+
+The description about "the internal path length of a tree" is for multiway tree only.
+
+The binary tree is different on defining the external path length and the internal path length.
+
+## Binary Tree: Internal Nodes vs External Nodes
+
+External_Nodes = Internal_Nodes + 1
+
+## Binary Tree: External Path Length vs Internal Path length vs Path length vs Weighted Path length
+
+External_Path_Length = Internal_Path_length + 2 \* Internal_Nodes
+
+https://web.cs.wpi.edu/~cs504/s00m/classes/class12/Class12.html
+
+Path length === External Path Length
+
+If you don't see either internal or external, it means external.
+
+Weighted Path length has weight to be multiplied.
+
+![](image/README/BinaryTree_PathLength_01.png)
+
+![](image/README/BinaryTree_PathLength_02.png)
+
+# P72
+
+```scala
+def postorder: List[T] = children.flatMap(_.postorder) ::: List(value)
+```
+
+How to do preorder and inorder?
+
+The preorder is easy.
+
+Because it is a multiway tree, not binary, no inorder is required.
+
+## mkString
+
+```scala
+List(2, 3, 5, 7, 5).mkString("_")
+```
+
+2_3_5_7_5
 
 ## ...

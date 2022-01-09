@@ -23,5 +23,20 @@ object P70 {
 
     mt = MTree('a', List(MTree('f', List(MTree('g'))), MTree('c'), MTree('b', List(MTree('d'), MTree('e')))))
     println(s"The node count of multiway tree $mt is: ${mt.nodeCount}")
+
+    var str = "a"
+    println(s"The node count of multiway tree from $str is: ${MTree.string2MTree(str).nodeCount}")
+    str = "af^"
+    println(s"The node count of multiway tree from $str is: ${MTree.string2MTree(str).nodeCount}")
+    str = "afg^^"
+    println(s"The node count of multiway tree from $str is: ${MTree.string2MTree(str).nodeCount}")
+    str = "afg^^c^"
+    println(s"The node count of multiway tree from $str is: ${MTree.string2MTree(str).nodeCount}")
+    str = "afg^^c^"
+    println(s"The node count of multiway tree from $str is: ${MTree.string2MTree(str).nodeCount}")
+
+    str = "afg^^c^bd^e^^"
+    println(s"The node count of multiway tree from $str is: ${MTree.string2MTree(str).nodeCount}")
+
   }
 }
