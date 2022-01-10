@@ -434,4 +434,44 @@ List(2, 3, 5, 7, 5).mkString("_")
 
 2_3_5_7_5
 
+## zio
+
+Type-safe, composable asynchronous and concurrent programming for Scala
+
+## Type of Graphs
+
+- Labeled graph
+- Unlabeled graph
+- Weighted graph
+- Directed graph
+- Undirected graph
+- Simple graph
+- Connected graph
+- Null graph
+- Trival graph
+
+## Where are P74, P75, P76, P77, P78, P79?
+
+## Type projection
+
+## P80, P81, P82, P83, P84, P85, P86, P87, P88, P89 (unfinished)
+
+Can't work because the code is too old
+
+## P91 (unfinished)
+
+The code has issues.
+
+# P92, P93, P94, P95, P96 (unfinished)
+
+No answers
+
+## P97 (unfinished)
+
+The code has issues.
+
+# P98, P99 (unfinished)
+
+No answers
+
 ## ...
