@@ -244,16 +244,6 @@ sealed abstract class Tree[+T] {
 
 Have to move each Tree definition to a separate package to avoid the conflicts.
 
-## Variance : Covariance vs Contravariance vs Invariance
-
-```scala
-class Foo[+A] // A covariant class
-class Bar[-A] // A contravariant class
-class Baz[A]  // An invariant class
-```
-
-https://docs.scala-lang.org/tour/variances.html
-
 ## Generate-and-Test Paradigm
 
 A method for silving design problems when a complete preliminary design can be performed, then evaluated, and iterate the process if the evaluation is not satisfactory. It can be used only for very simple design problems.
