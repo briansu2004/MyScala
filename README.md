@@ -20,6 +20,14 @@ https://docs.scala-lang.org/cheatsheets/index.html
 
 - ScalaMock for mock
 
+- Scalafix for lint
+
+- ? for Scala DevOps
+
+  Buddy CI/CD?
+
+- ? for Scala ?
+
 ## Variance : Covariance vs Contravariance vs Invariance
 
 方差：协方差 vs 逆变 vs 不变
@@ -40,7 +48,11 @@ Variance is the correlation of subtyping relationships of complex types and the 
 
 Generic classes in Scala are invariant by default.
 
-## 20210112 Zhi
+## 20220105 Zhi
+
+https://github.com/zhiwilliam/couses
+
+## 20220112 Zhi
 
 DSL
 
@@ -75,3 +87,103 @@ cio schema
 foldLeft +
 
 foldLeft - ==> foldLeft +(-)
+
+## 20220119 Zhi
+
+cio project vs Spring
+
+"<%" ducking type
+
+Structural types
+
+"Object" keyword in Scala : singleton (pattern)
+
+It uses the least memory
+
+![](image/README/Scala_collection_mutable.png)
+
+![](image/README/Scala_collection_immutable.png)
+
+Grouping all impilicit objects in implicits ==> easy to import \*.implicits.\_
+
+Quill
+
+Syntax sugar for implicit
+
+Course2, test.scala -> check it out
+
+try to find out the best mutual funds (best increasements)
+
+map + flatmap + pure
+
+flatmap is sequential, not in parallel
+
+flatmap: A->F[B]
+
+need to get the values!
+
+need to create a new box, can't use the old box
+
+need to use Future API
+
+In Scala, flatMap() method is identical to the map() method, but the only difference is that in flatMap the inner grouping of an item is removed and a sequence is generated. It can be defined as a blend of map method and flatten method.
+
+map: A->B
+
+blackbox
+
+doesn't need to get the values!
+
+Applicative
+
+How to do flatmap in parallel?
+
+Use cats library or Future
+
+try and future are eager only, others are lazy
+
+Context bound
+
+Java HashMap
+
+HashMap issues and solutions in Java 7
+
+HashMap issues and solutions in Java 8
+
+Ppl from Citi capital market and RBC are generally better
+
+Core Java interview
+
+- cache friendly
+
+- non-blocking
+
+Big Data interview
+
+- Garbage collection
+
+## 20220202 Zhi
+
+- iw q: context bound, Monad, map, flatmap, Functor, ...
+- cats, kitter
+- fs2, http4s
+- co.fs2
+- Functor, Foldable, Applicative
+- CO ? ZIO (resource management, multi-threading, ...)
+- Use play (future) before CO
+- hoccon === JSON
+- tsec authentication
+- how to async?
+- how to DI?
+- how to work with Kafka?
+- Spring Boot uses annotation for Redis - this has cons
+- Fail fast for cloud / k8s infrastructure
+- Fail propogate to the parent layer in the cloud / distributed environment
+- Use CATS, ZIO to do async
+- cache friendly : CPU cache, L1/L2/L3, padding
+- Scala pathways: Big Data / data processing / Spark & Streaming, REST API, DSL, ...
+- fifo queue
+- Use Scala to build a project for the job interview
+- SQL iw: Lin Ping lao shi's SQL - google search
+- Java iw: Hashmap vs Hashtable, Bean Factory, aspect, design pattern, ...
+- ...

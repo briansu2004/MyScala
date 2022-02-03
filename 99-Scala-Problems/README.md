@@ -463,5 +463,3 @@ The code has issues.
 # P98, P99 (unfinished)
 
 No answers
-
-## ...
