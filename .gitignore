@@ -47,5 +47,4 @@ Thumbs.db
 
 # out
 *.class
-out/*
 **/out
