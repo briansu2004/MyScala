@@ -48,11 +48,11 @@ Variance is the correlation of subtyping relationships of complex types and the 
 
 Generic classes in Scala are invariant by default.
 
-## 20220105 Zhi
+## 2022-01-05 Zhi
 
 https://github.com/zhiwilliam/couses
 
-## 20220112 Zhi
+## 2022-01-12 Zhi
 
 DSL
 
@@ -88,7 +88,7 @@ foldLeft +
 
 foldLeft - ==> foldLeft +(-)
 
-## 20220119 Zhi
+## 2022-01-19 Zhi
 
 cio project vs Spring
 
@@ -162,7 +162,7 @@ Big Data interview
 
 - Garbage collection
 
-## 20220202 Zhi
+## 2022-02-02 Zhi
 
 - iw q: context bound, Monad, map, flatmap, Functor, ...
 - cats, kitter
@@ -186,4 +186,29 @@ Big Data interview
 - Use Scala to build a project for the job interview
 - SQL iw: Lin Ping lao shi's SQL - google search
 - Java iw: Hashmap vs Hashtable, Bean Factory, aspect, design pattern, ...
-- ...
+
+## 2022-02-04 1st Scala job from the agent
+
+- BOA Java/Scala developer!
+    from the buddy agent Collbera
+
+- Pluralsight free weekend!
+    - 7 Scala courses and certificates
+
+## 2022-02-07 1st Scala job talk with agent
+
+
+
+## Scala Worksheet and Compiling Server issue and solution
+
+Worksheet is a good feature.
+
+![](image/README/scala_worksheet_new.png)
+
+However, it doesn't work with the JDK 17.
+
+The issues are something like "Compiling Server has issues" blah blah blah ...
+
+Changing JDK to 13 will solve this issue, even may have some warnings.
+
+![](image/README/scala_worksheet_work.png)
