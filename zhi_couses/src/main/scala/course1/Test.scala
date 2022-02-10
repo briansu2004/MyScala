@@ -1,6 +1,6 @@
 package course1
 
-import scala.io
+import scala.io.Source
 import timetools.DateTimeWrapper._
 
 object Test extends App {
@@ -10,7 +10,7 @@ object Test extends App {
   /* print all sales and sale amounts */
   case class SaleDetails(seller: String, amount: BigDecimal, time: String)
 
-  val bufferedSource = io.Source.fromFile("C:\\tmp\\test\\input.csv")
+  val bufferedSource = Source.fromFile("C:\\tmp\\test\\input.csv")
   val lines = bufferedSource.getLines()
   val listOfSaleDetails: Array[SaleDetails] = lines.map { line =>
     val cols = line.split(",").map(_.trim)

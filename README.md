@@ -252,8 +252,18 @@ h after g
 
 Church number
 
+CATS Effect! not cats
 
-Code practice tips:
+
+
+The Bay, Scotia, Citi, Meilin, HSBC, Disney, CIBC (tiger), ...
+
+
+Questions
+
+
+
+### Code practice tips
 
 map, flatmap, groupBy
 
@@ -262,12 +272,22 @@ type class
 context bound: memorize it
 
 
+### Job Search tips
+
+Make a story (find a path: I choose REST API)
+
+Update CV
+
+Talk to Mr. Zhi
+
+Update LinkedIn
+
+Iws
+
+Offers
 
 
-
-
-Homework
-========
+### Homework
 
 Make a list of future to a future of list
 
