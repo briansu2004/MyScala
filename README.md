@@ -212,3 +212,64 @@ The issues are something like "Compiling Server has issues" blah blah blah ...
 Changing JDK to 13 will solve this issue, even may have some warnings.
 
 ![](image/README/scala_worksheet_work.png)
+
+
+## 2022-02-09 Zhi
+
+Kleisli
+
+Stream for big data process
+
+Tagless Final pattern in Scala
+https://www.baeldung.com/scala/tagless-final-pattern#:~:text=In%20this%20long%20article%2C%20we,is%20available%20over%20on%20GitHub.
+https://github.com/Baeldung/scala-tutorials/tree/master/scala-core-fp
+
+IO.pure <-> ZIO.success
+
+Read Tagless Final before learning CATS
+
+ZIO and CATS are similar
+
+Stream:
+FS2 stream
+spark stream
+akka stream
+...
+
+scala shapeless
+
+CATS OptionT
+
+Monad transformer is the most difficult part in Monad
+
+OptionT, ConT, IorT ... T is for Transformer
+
+范畴论! category theory
+
+h after g
+
+丘奇数 / 邱奇数
+
+Church number
+
+
+Code practice tips:
+
+map, flatmap, groupBy
+
+type class
+
+context bound: memorize it
+
+
+
+
+
+
+Homework
+========
+
+Make a list of future to a future of list
+
+
+
