@@ -1,0 +1,73 @@
+import Constants._
+import listFileInDir.getListOfFiles
+import scala.collection.mutable.ListBuffer
+import scala.io.Source
+import scala.util.Try
+
+object TradingAnalysis extends App {
+  implicit def str2BigDecimal(in: String): Option[BigDecimal] = Try(BigDecimal(in)).toOption
+
+  implicit def str2BigInt(in: String): Option[BigInt] = Try(BigInt(in)).toOption
+
+  //  directory => List[File] => List[list[Trading]] => List[Trading]
+  //  List[File]
+
+  val marketFile = dataFolder + separator + markFile
+  val bufferedSourceMarket = Source.fromFile(marketFile)
+  val markerLines = bufferedSourceMarket.getLines()
+  val tickerPriceList = markerLines.map {
+    line => {
+      val cols = line.split(" ").map(_.trim)
+      tickerPrice(cols(0), cols(1))
+    }
+  }.toList
+  bufferedSourceMarket.close()
+
+  var tradeDataList = new ListBuffer[List[trading]]()
+
+  val dataFiles = getListOfFiles(dataFolder).filter(_.getName != markFile)
+  dataFiles.map {
+    case f =>
+      println(s"Handling data file $f")
+      val tradingFile1 = dataFolder + separator + f.getName
+      val bufferedSourceTrading1 = Source.fromFile(tradingFile1)
+      val trading1Lines = bufferedSourceTrading1.getLines()
+      val tradeList1 = trading1Lines.map {
+        line =>
+          val cols = line.split("\t").map(_.trim)
+          trading(cols(0), cols(1), cols(2), cols(3), cols(4), cols(5))
+      }.toList
+      tradeDataList += tradeList1
+      bufferedSourceTrading1.close()
+  }
+
+  val tradeList = tradeDataList.flatten
+
+  val riskResultList = tradeList.groupBy(_.ticker).map {
+    case (ticker, tradingList) =>
+      val risk = tradingList.flatMap { rec =>
+        val inOut = if (rec.action.toLowerCase() == "buy") 1 else -1
+        rec.numShares.flatMap(shares => rec.tradePrice.map(price => inOut * price * BigDecimal(shares))).toList
+      }.sum
+      (ticker, risk)
+  }.toList
+  val top20RiskList = riskResultList.sortBy(_._2).take(20)
+  val top20RiskValue = top20RiskList.flatMap { case (symbol, _) => tickerPriceList.zipWithIndex.map { case (v, _)
+  => (v.ticker, v.curPrice)
+  }.toMap.get(symbol).map(tp =>
+    (symbol, tp.get))
+  }
+  println(s"Top 20 risks with current market value")
+  top20RiskValue.map(t => println(t))
+
+  val partyResultList = tradeList.groupBy(_.party).map {
+    case (symbol, tradingList) =>
+      val risk = tradingList.flatMap { rec =>
+        rec.numShares.flatMap(shares => rec.tradePrice.map(price => price * BigDecimal(shares))).toList
+      }.sum
+      (symbol, risk)
+  }.toList
+  val top20PartyList = partyResultList.sortBy(_._2).take(20)
+  println(s"Top 20 parties")
+  top20PartyList.map(t => println(t))
+}

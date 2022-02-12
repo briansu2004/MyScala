@@ -1,0 +1,66 @@
+import scala.io.Source
+import scala.util.Try
+
+object TradingAnalysis extends App {
+  implicit def str2Dec(in: String): Option[BigDecimal] = Try(BigDecimal(in)).toOption
+
+  implicit def str2Int(in: String): Option[BigInt] = Try(BigInt(in)).toOption
+
+  val marketFile = "C:\\tmp\\test_data\\marks.txt"
+  val bufferedSourceMarket = Source.fromFile(marketFile)
+  val markerLines = bufferedSourceMarket.getLines()
+  val listOfTickers: Array[ticker] = markerLines.map {
+    line => {
+      val cols = line.split(" ").map(_.trim)
+      ticker(cols(0), cols(1))
+    }
+  }.toArray
+  println(s"Top 5 tickers")
+  listOfTickers.take(5).foreach(t => println(t))
+  bufferedSourceMarket.close()
+
+  val tradingFile1 = "C:\\tmp\\test_data\\xaa"
+  val bufferedSourceTrading1 = Source.fromFile(tradingFile1)
+  val trading1Lines = bufferedSourceTrading1.getLines()
+  val tradeList = trading1Lines.map {
+    line =>
+      val cols = line.split(",").map(_.trim)
+      trading(cols(0), cols(1), cols(2), cols(3), cols(4), cols(5))
+  }.toList
+  //.partition(_.action.toLowerCase == "sell")
+  //val test = Option(3).flatMap(x => Option(x + 1))
+  // sell - numShares * sellBuyValue
+  val results = tradeList.groupBy(_.ticker).map {
+    case (symbol, tradingList) =>
+      val risk = tradingList.flatMap { rec =>
+        val inOut = if (rec.action.toLowerCase() == "buy") 1 else -1
+        rec.numShares.flatMap(shares => rec.tradePrice.map(price => inOut * price * BigDecimal(shares))).toList
+      }.sum
+      (symbol, risk)
+  }.toList
+
+  val top20Risk = results.sortBy(_._2).take(20)
+  println(s"Top 20 risks")
+  top20Risk.map(t => println(t))
+
+  //  direcorty => List[File] => List[list[Trading]] => List[Trading]
+  //  List[File]
+  //  //listOfTradingDetails1.foreach(t => println(t))
+  //  listOfTradingDetails1.take(5).foreach(t => println(t))
+  //  bufferedSourceTrading1.close()
+  //
+  //  //trading(2011-01-20,American Funds Wash;A,PG,SELL,17600,65.26)
+  //  println(s"per ticker:")
+  //  val tradingPerTicker = listOfTradingDetails1.groupBy(_.ticker).map {
+  //    case (_, arr) => arr.map(_.amount).sum
+  //  }
+  //  //tradingPerTicker.foreach(t => println(t))
+  //  List(tradingPerTicker).take(20).foreach(t => println(t))
+  //
+  //  println(s"per party:")
+  //  val tradingPerParty = listOfTradingDetails1.groupBy(_.party).map {
+  //    case (_, arr) => arr.map(_.amount).sum
+  //  }
+  //  //tradingPerParty.foreach(t => println(t))
+  //  List(tradingPerParty).take(20).foreach(t => println(t))
+}

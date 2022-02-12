@@ -292,4 +292,14 @@ Offers
 Make a list of future to a future of list
 
 
+### 2022-02-10 BOA iw
+
+REST API, microservices, Big Data, ZIO
+
+3-yr contract
+
+15 ppl team (2 BA, 1 PM, 7 dev, some offshore devs); the whole team is quite large 
+
+
+
 
