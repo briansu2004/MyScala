@@ -292,6 +292,23 @@ Offers
 Make a list of future to a future of list
 
 
+Answer:
+
+```scala
+import scala.concurrent.Future
+
+object ListOfFuture2FutureOfList extends App {
+
+  import scala.concurrent.ExecutionContext.Implicits.global
+
+  val ListOfFuture = List(Future(1), Future(2), Future(3))
+  val futureOfList = Future.sequence(ListOfFuture)
+  println(futureOfList)
+}
+```
+
+![](image/README/ListOfFuture2FutureOfList.png)
+
 ### 2022-02-10 BOA iw
 
 REST API, microservices, Big Data, ZIO
@@ -299,6 +316,40 @@ REST API, microservices, Big Data, ZIO
 3-yr contract
 
 15 ppl team (2 BA, 1 PM, 7 dev, some offshore devs); the whole team is quite large 
+
+### 2022-02-12 re-create sbt project
+
+![](image/README/create_sbt_project_01.png)
+
+![](image/README/create_sbt_project_02.png)
+
+
+build.sbt
+
+```dos
+ThisBuild / version := "0.1.0-SNAPSHOT"
+
+ThisBuild / scalaVersion := "2.13.8"
+
+lazy val root = (project in file("."))
+  .settings(
+    name := "TradingAnalysis"
+  )
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % "test"
+```
+
+Update sbt
+
+### Move files in IJ
+
+Be careful to move files in IJ
+
+Always use refactor to move, or you will break things.
+
+### 2022-02-14 BOA iw 2nd
+
+
 
 
 
