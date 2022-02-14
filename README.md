@@ -382,12 +382,86 @@ WorkSheet is very helpful.
 
 #### Scala: Monad
 
+Monads in Scala
+
+https://www.baeldung.com/scala/monads
+
+
 In Scala, Monads is a construction which performs successive calculations. It is an object which covers the other object. It is worth noting that here, the output of an operation at some step is an input to another computations, which is a parent to the recent step of the program stated. Monad is neither a class nor a trait, it is a concept. The maximum collections of the Scala are Monads but not all the Monads are collections, there are several Monads which are containers like Options in Scala. In short, we can say that in Scala the data types that implements map as well as flatMap() like Options, Lists, etc. are called as Monads.
 
 Collections that support map as well as flatMap are called as monadic.
 
+#### Scala: for-comprehension
+
+A Comprehensive Guide to For-Comprehension in Scala
+
+https://www.baeldung.com/scala/for-comprehension
+
+In imperative programming languages, we use loops such as for-loop and while-loop to iterate over collections. The Scala programming language introduced a new kind of loop: the for-comprehension.
+
+
+```scala
+    val partyResultList = tradingDataList.groupBy(_.party).map {
+      case (party, tradingList) =>
+        val tradingVolume = tradingList.flatMap { rec =>
+          rec.numShares.flatMap(shares => rec.tradePrice.map(price => price * BigDecimal(shares))).toList
+        }.sum
+        (party, tradingVolume)
+    }.toList
+```
+
+==>
+
+```scala
+    val partyResultNewList = tradingDataList.groupBy(_.party).map {
+      case (party, tradingList) =>
+        val tradingVolume = {
+          for {
+            rec <- tradingList
+            share <- rec.numShares
+            price <- rec.tradePrice
+          } yield BigDecimal(share) * price
+      }.sum
+      (party, tradingVolume)
+    }.toList
+```
+
+Only Option, List, Vector ... are monad, String is not monad!
+
+for === flatmap
+yield === map
+
+```scala
+    val riskResultList = tradingDataList.groupBy(_.ticker).map {
+      case (ticker, tradingList) =>
+        val risk = tradingList.flatMap { rec =>
+          rec.numShares.flatMap(shares => rec.tradePrice.map(price => price * BigDecimal(shares) * (if (rec.action.toLowerCase() == "buy") 1 else
+            -1))).toList
+        }.sum
+        (ticker, risk)
+    }.toList
+```
+
+==>
+
+```scala
+    val riskResultNewList = tradingDataList.groupBy(_.ticker).map {
+      case (ticker, tradingList) =>
+        val risk = {
+          for {
+            rec <- tradingList
+            share <- rec.numShares
+            price <- rec.tradePrice
+          } yield BigDecimal(share) * price * (if (rec.action.toLowerCase == "buy") 1 else -1)
+        }.sum
+        (ticker, risk)
+    }.toList
+```
 
 #### Scala: ZIO Stream
+
+
+https://zio.dev/next/datatypes/stream/zstream/
 
 
 
@@ -403,3 +477,27 @@ We'll ask you a bunch of questions pertaining to Scala, Java and your experience
 
 
 
+### ? Questions to StackOverflow
+
+#### Scala for-comprehension
+
+Why this line doesn't work?
+
+```scala
+    val riskResultNewList = tradingDataList.groupBy(_.ticker).map {
+      case (ticker, tradingList) =>
+        val risk = tradingList.flatMap { rec =>
+          for {
+            inOut <- (if (rec.action.toLowerCase == "buy") 1 else -1)            // this line has error!
+            share <- rec.numShares
+            price <- rec.tradePrice
+          } yield BigDecimal(share) * price //* (if (rec.action.toLowerCase == "buy") 1 else -1)
+        }.sum
+        (ticker, risk)
+    }.toList
+```
+
+
+#### Does Python have fo-comprehension?
+
+#### Does JavaScript have fo-comprehension?
