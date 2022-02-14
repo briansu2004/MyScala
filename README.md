@@ -341,13 +341,62 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % "test"
 
 Update sbt
 
-### Move files in IJ
+### 2022-02-13
+
+#### Move files in IJ
 
 Be careful to move files in IJ
 
 Always use refactor to move, or you will break things.
 
+
+#### Scala: Any, AnyVal, AnyRef
+
+Type Hierarchies in Scala
+
+https://www.baeldung.com/scala/type-hierarchies#:~:text=2.2.-,AnyVal,are%20an%20abstract%20final%20type.
+
+
+![](image/README/Scala_Any.png)
+
+
+#### Scala: Case class
+
+Adding the case keyword causes the compiler to add a number of useful features automatically. The keyword suggests an association with case expressions in pattern matching.
+
+First, the compiler automatically converts the constructor arguments into immutable fields (vals). The val keyword is optional. If you want mutable fields, use the var keyword. So, our constructor argument lists are now shorter.
+
+Second, the compiler automatically implements equals, hashCode, and toString methods to the class, which use the fields specified as constructor arguments. So, we no longer need our own toString() methods.
+
+Finally, also, the body of Person class becomes empty because there are no methods that we need to define!
+
+#### Scala: mkString
+
+You can make use of the mkString( ) method to concatenate the resulting list 
+
+
+#### Scala: WorkSheet
+
+WorkSheet is very helpful.
+
+
+#### Scala: Monad
+
+In Scala, Monads is a construction which performs successive calculations. It is an object which covers the other object. It is worth noting that here, the output of an operation at some step is an input to another computations, which is a parent to the recent step of the program stated. Monad is neither a class nor a trait, it is a concept. The maximum collections of the Scala are Monads but not all the Monads are collections, there are several Monads which are containers like Options in Scala. In short, we can say that in Scala the data types that implements map as well as flatMap() like Options, Lists, etc. are called as Monads.
+
+Collections that support map as well as flatMap are called as monadic.
+
+
+#### Scala: ZIO Stream
+
+
+
 ### 2022-02-14 BOA iw 2nd
+
+
+The overall review is that your code is good! The end result (as discussed) is less important than the code quality.
+
+We'll ask you a bunch of questions pertaining to Scala, Java and your experiences on different projects and such. Taking the lead on the interview will be my lead developers (Sean and Leo) – and there will be a behavioral interview section as well.
 
 
 
