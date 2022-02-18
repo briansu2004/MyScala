@@ -6,8 +6,6 @@ My Scala
 
 https://docs.scala-lang.org/cheatsheets/index.html
 
-## Misc
-
 ## Coming soon
 
 - 99 Scala Problems
@@ -309,7 +307,7 @@ object ListOfFuture2FutureOfList extends App {
 
 ![](image/README/ListOfFuture2FutureOfList.png)
 
-### 2022-02-10 BOA iw
+## 2022-02-10 BOA iw
 
 REST API, microservices, Big Data, ZIO
 
@@ -317,7 +315,7 @@ REST API, microservices, Big Data, ZIO
 
 15 ppl team (2 BA, 1 PM, 7 dev, some offshore devs); the whole team is quite large 
 
-### 2022-02-12 re-create sbt project
+## 2022-02-12 re-create sbt project
 
 ![](image/README/create_sbt_project_01.png)
 
@@ -341,16 +339,16 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % "test"
 
 Update sbt
 
-### 2022-02-13
+## 2022-02-13
 
-#### Move files in IJ
+### Move files in IJ
 
 Be careful to move files in IJ
 
 Always use refactor to move, or you will break things.
 
 
-#### Scala: Any, AnyVal, AnyRef
+### Scala: Any, AnyVal, AnyRef
 
 Type Hierarchies in Scala
 
@@ -360,7 +358,7 @@ https://www.baeldung.com/scala/type-hierarchies#:~:text=2.2.-,AnyVal,are%20an%20
 ![](image/README/Scala_Any.png)
 
 
-#### Scala: Case class
+### Scala: Case class
 
 Adding the case keyword causes the compiler to add a number of useful features automatically. The keyword suggests an association with case expressions in pattern matching.
 
@@ -370,17 +368,28 @@ Second, the compiler automatically implements equals, hashCode, and toString met
 
 Finally, also, the body of Person class becomes empty because there are no methods that we need to define!
 
-#### Scala: mkString
+### Scala: Type class
+
+A type class is a pattern in programming originating in Haskell. It allows us to extend existing libraries with new functionality, without using traditional inheritance, and without altering the original library source code.
+
+A type class is a group of types that satisfy a contract typically defined by a trait. They enable us to make a function more ad-hoc polymorphic without touching its code. This flexibility is the biggest win with the type-class pattern.
+
+Type Classes in Scala
+
+https://www.baeldung.com/scala/type-classes
+
+
+### Scala: mkString
 
 You can make use of the mkString( ) method to concatenate the resulting list 
 
 
-#### Scala: WorkSheet
+### Scala: WorkSheet
 
 WorkSheet is very helpful.
 
 
-#### Scala: Monad
+### Scala: Monad
 
 Monads in Scala
 
@@ -391,7 +400,37 @@ In Scala, Monads is a construction which performs successive calculations. It is
 
 Collections that support map as well as flatMap are called as monadic.
 
-#### Scala: for-comprehension
+
+
+Other Collections
+
+Besides List, there are a number of other collections in the Scala standard library. The most commonly used of these are Map, Set, Vector, and Stream. 
+
+- Option
+- List
+- Map
+- Set
+- Vector
+- Stream -> Lazy List
+
+
+
+Why Vector?
+
+Use of List is very common in Scala, but it can sometimes be inefficient for random access because the time complexity of accessing an element is O(n). Scala provides an alternative collection, Vector, that is optimized for random access by storing its elements in a tree structure that has little memory overhead. All operations on a Vector happen in effectively constant time, which means that for large collections it can be significantly more efficient than List.
+
+
+A Stream is essentially a List with an undetermined number of elements, which are computed lazily. A “lazy” value is one that is only evaluated at the time it’s required.
+
+
+
+
+### Scala: for-comprehension
+
+for === flatMap
+
+yield === map
+
 
 A Comprehensive Guide to For-Comprehension in Scala
 
@@ -458,28 +497,137 @@ yield === map
     }.toList
 ```
 
-#### Scala: ZIO Stream
+### Scala: ZIO Stream
 
-
+ZStream
 https://zio.dev/next/datatypes/stream/zstream/
 
+ZIO Chunk is a wrapper on Java array.
+
+Lots of good things in ZIO doc.
+
+### Scala: Variance
+
+Variance is the correlation of subtyping relationships of complex types and the subtyping relationships of their component types. Scala supports variance annotations of type parameters of generic classes, to allow them to be covariant, contravariant, or invariant if no annotations are used. The use of variance in the type system allows us to make intuitive connections between complex types, whereas the lack of variance can restrict the reuse of a class abstraction.
+
+```scala
+class Foo[+A] // A covariant class
+class Bar[-A] // A contravariant class
+class Baz[A]  // An invariant class
+```
+
+![](image/README/variance_example_01.png)
+
+In this example, 
+
+- A has to be the child type of C  (because of -A)
+- B has to be the parent class of D (because of +B)
+
+Type safe is the key!
+
+The father of Scalar named his INC as TypeSafe
+
+Why type safe?
+
+Python is not type safe. Some issues happen only in runtime - can't be identitied in compile-time.
 
 
-### 2022-02-14 BOA iw 2nd
 
+### Scala: CATS
+
+
+Scala – Introduction to Cats
+https://www.baeldung.com/scala/cats-intro
+
+https://github.com/typelevel/cats
+
+```scala
+libraryDependencies += "org.typelevel" %% "cats-core" % "2.2.0"
+```
+
+
+A type class is a pattern in programming originating in Haskell. It allows us to extend existing libraries with new functionality, without using traditional inheritance, and without altering the original library source code. 
+
+In Scala Cats, components of type classes can be specified as:
+
+- Type class
+- Instances of type class
+- Interface objects
+- Interface syntax
+
+### Scala: Pure
+
+What is pure in Scala?
+
+A function is called pure function if it always returns the same result for same argument values and it has no side effects like modifying an argument (or global variable) or outputting something
+
+
+
+Examples of pure functions
+
+Given that definition of pure functions, as you might imagine, methods like these in the scala.math._ package are pure functions:
+
+- abs
+- ceil
+- max
+- min
+
+These Scala String methods are also pure functions:
+
+- isEmpty
+- length
+- substring
+
+
+Examples of impure functions
+
+
+- foreach
+
+- Date and time related methods like getDayOfWeek, getHour, and getMinute are all impure because their output depends on something other than their input parameters. 
+
+
+
+## 2022-02-14 BOA iw 2nd
 
 The overall review is that your code is good! The end result (as discussed) is less important than the code quality.
 
 We'll ask you a bunch of questions pertaining to Scala, Java and your experiences on different projects and such. Taking the lead on the interview will be my lead developers (Sean and Leo) – and there will be a behavioral interview section as well.
 
+Failed!
+
+
+## Scala: CATS
+
+```dos
+libraryDependencies += "org.typelevel" %% "cats-core" % "2.3.0"
+```
+
+```scala
+import cats.implicits._
+
+import scala.language.reflectiveCalls
+
+val map1: scala.collection.immutable.Map[Int,List[String]] = Map(1 -> List(a), 2 -> List(b))
+val map2: scala.collection.immutable.Map[Int,List[String]] = Map(1 -> List(c), 2 -> List(d))
+val res0: scala.collection.immutable.Map[Int,List[String]] = Map(1 -> List(a, c), 2 -> List(b, d))
+```
+
+![](image/README/cats_01.png)
 
 
 
 
 
-### ? Questions to StackOverflow
 
-#### Scala for-comprehension
+## Misc
+
+### Self-cultivation
+
+
+## ? Questions to StackOverflow
+
+### Scala for-comprehension
 
 Why this line doesn't work?
 
@@ -498,6 +646,26 @@ Why this line doesn't work?
 ```
 
 
-#### Does Python have fo-comprehension?
+### Does Python have fo-comprehension?
 
-#### Does JavaScript have fo-comprehension?
+### Does JavaScript have fo-comprehension?
+
+
+
+## Questions to ask on Zhi's new class 2022-02-16 
+
+- Why ZIO examples: 
+    for { _ <- ... }
+
+- What do ZIO projects look like?
+    - ZIO + Kafka?
+
+- What is the knowledge point for the Future List interview question?
+    - sequence
+
+
+##  2022-02-16 Zhi
+
+BOA iw q
+
+
