@@ -883,11 +883,13 @@ Play is non-opinionated about database access, and integrates with many object r
 Play uses HOCON as its configuration file format.  HOCON has a number of advantages over other config formats, but there are two things that can be used when modifying settings.
 
 
+![](image/README/play_project_structure.png)
+
+### Scala & Akka HTTP 
 
 akkahttp
 
-
-![](image/README/play_project_structure.png)
+Akka HTTP Client API
 
 
 
@@ -913,14 +915,24 @@ REST - ?
 Web MVC - play, Akka
 Unit test - ScalaTest
 Lib - Scalaz, CATS
-Big Data - Spark
+Big Data - Spark (Spark Streaming, SparkQL, Spark Optimization, Spark performance tuning)
 Config format - HOCON
 Async / Reactive - Future, Promise
-Framework - ZIO, Akka, play
+Framework - ZIO, play, Akka (Akka Typed, Akka Streams, Akka HTTP, Akka Classic Persistence, Akka Classic Clustering, Akka Classic Serialization)
+
 
 ### Stories
 
 ???
+
+
+
+## To be forked
+
+
+https://github.com/typicode/xv
+
+https://github.com/typicode/lowdb
 
 
 
