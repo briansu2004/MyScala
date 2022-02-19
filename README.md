@@ -668,4 +668,151 @@ Why this line doesn't work?
 
 BOA iw q
 
+## 2022-02-17
+
+BOA iw q V2
+
+## 2022-02-18
+
+- BOA iw q V3
+
+- How to sum two Option[Int] in scala
+
+    - Solution 1: CATS / monoid
+  
+```dos
+import cats.implicits._
+
+a |+| b
+```
+
+    - Solution 2: map and flatmap / for comprehension 
+
+
+    - Soltion 3: reduceOption
+    
+    
+    - Not a good solution: function
+
+```dos
+def addOptionInt(a: Option[Int], b: Option[Int]): Option[Int] = {
+  (a, b) match {
+    case(None, None) => None
+    case(None, v@Some(_)) => v
+    case(v@Some(_), None) => v
+    case(Some(v1), Some(v2)) => Some(v1 + v2)
+  }
+}
+```
+
+    - Not a Soltion: getOrElse / orElse
+
+```
+a.getOrElse(0) + b.getOrElse(0)
+```
+
+
+    - Combination
+
+```
+import cats.implicits._
+
+def addOptionInt(a: Option[Int], b: Option[Int]): Option[Int] = {
+  (a, b) match {
+    case (None, None) => None
+    case (None, v@Some(_)) => v
+    case (v@Some(_), None) => v
+    case (Some(v1), Some(v2)) => Some(v1 + v2)
+  }
+}
+
+def output(a: Option[Int], b: Option[Int]): Unit = {
+  println(s"a: $a; b: $b")
+  //println(s"for (x <- a; y <- b) yield x + y = ${for (x <- a; y <- b) yield x + y}")
+  println(s"for (x <- a.orElse(Some(0)); y <- b.orElse(Some(0))) yield x + y = ${for (x <- a.orElse(Some(0)); y <- b.orElse(Some(0))) yield x + y}")
+  println(s"a.flatMap(x => b.map(x + _)) = ${a.flatMap(x => b.map(x + _))}")
+  println(s"(a ++ b).reduceOption(_ + _) = ${(a ++ b).reduceOption(_ + _)}")
+  println(s"a |+| b = ${a |+| b}")
+  println(s"addOptionInt(a,b) = ${addOptionInt(a, b)}")
+  //println(s"a.getOrElse(0) + b.getOrElse(0) = ${a.getOrElse(0) + b.getOrElse(0)}")
+}
+
+
+var a: Option[Int] = None
+var b: Option[Int] = None
+output(a, b)
+
+a = Some(1)
+output(a, b)
+
+b = Some(2)
+output(a, b)
+
+a = None
+output(a, b)
+```
+
+![](image/README/option_int_add_solutions_01.png)
+
+![](image/README/option_int_add_solutions_02.png)
+
+
+Looks like 
+
+a |+| b
+
+and
+
+(a ++ b).reduceOption(_ + _) 
+
+are best answers.
+
+
+
+
+
+## 2022-02-19
+
+### reduceOption
+
+When reducing a collection to a single value, prefer reduceOption to reduce.
+
+ome collections are empty, using reduce may throw an exception.
+
+`java.lang.UnsupportedOperationException: empty.reduceLeft`
+
+reduceOption is a safer alternative, since it encodes the possibility of the empty list in its return type:
+
+```dos
+Seq(1, 2, 3).reduceOption(_ + _)
+// res0: Option[Int] = Some(6)
+
+Seq.empty[Int].reduceOption(_ + _)
+// res1: Option[Int] = None
+```
+
+### Scalaz
+
+Scalaz is a Scala library for functional programming.
+
+```dos
+libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.3.0-SNAPSHOT"
+```
+
+Scalaz provides additional modules for functionality beyond the basics included in scalaz-core
+
+scalaz-effect: Effectful programs
+
+```dos
+libraryDependencies += "org.scalaz" %% "scalaz-effect" % "7.3.0-SNAPSHOT"
+```
+
+Community
+- Gitter: Gitter
+- IRC: Freenode
+- Mailing List: Google Groups
+- Voice Chat: Discord
+
+
+
 
