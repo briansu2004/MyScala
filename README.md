@@ -814,5 +814,115 @@ Community
 - Voice Chat: Discord
 
 
+### Cats Effect
+
+The pure asynchronous runtime for Scala
+
+Cats Effect is a high-performance, asynchronous, composable framework for building real-world applications in a purely functional style within the Typelevel ecosystem. 
+
+It provides a concrete tool, known as "the IO monad", for capturing and controlling actions, often referred to as "effects", that your program wishes to perform within a resource-safe, typed context with seamless support for concurrency and coordination. 
+
+These effects may be asynchronous (callback-driven) or synchronous (directly returning values); they may return within microseconds or run infinitely.
+
+Even more importantly, Cats Effect defines a set of typeclasses which define what it means to be a purely functional runtime system. These abstractions power a thriving ecosystem consisting of streaming frameworks, JDBC database layers, HTTP servers and clients, asynchronous clients for systems like Redis and MongoDB, and so much more! Additionally, you can leverage these abstractions within your own application to unlock powerful capabilities with little-or-no code changes, for example solving problems such as dependency injection, multiple error channels, shared state across modules, tracing, and more.
+
+## Scala with Cats Book
+
+Learn the key type classes of: Functor, Monoid, Applicative, and Monad
+
+
+
+### sbt (aka scala build tool)
+
+sbt is an open-source build tool for Scala and Java projects, similar to Apache's Maven and Ant.
+
+
+### Lightbend (<- Typesafe)
+
+Lightbend, formerly known as Typesafe, is a company founded by Martin Odersky, the creator of the Scala programming language, Jonas Bonér, the creator of the Akka middleware, and Paul Phillips in 2011.
+
+
+### Flash scope vs Session scope
+
+The Flash scope works exactly like the Session, but with one difference:
+
+- data are kept for only one request
+
+
+### Scala Web MVC & REST : Play framework (built on Akka)
+
+Play is based on a lightweight, stateless, web-friendly architecture.
+
+Built on Akka, Play provides predictable and minimal resource consumption (CPU, memory, threads) for highly-scalable applications.
+
+Play Framework is an open-source web application framework which follows the model–view–controller (MVC) architectural pattern.
+
+
+- Stateless: Play 2 is fully RESTful – there is no Java EE session per connection.
+- Integrated unit testing: JUnit and Selenium support is included in the core.
+- API comes with most required elements built-in.
+- Asynchronous I/O: due to using Akka HTTP as its web server, Play can service long requests asynchronously rather than tying up HTTP threads doing business logic like Java EE frameworks that don't use the asynchronous support offered by Servlet 3.0.[20]
+- Modular architecture: like Ruby on Rails and Django, Play comes with the concept of modules.
+Native Scala support: Play 2 uses Scala internally but also exposes both a Scala API, and a Java API that is deliberately slightly different to fit in with Java conventions, and - Play is completely interoperable with Java.
+
+Play provides integration with test frameworks for unit testing and functional testing for both Scala and Java applications. For Scala, integrations with Scalatest and Specs2 are provided out-of-the-box and, for Java, there is integration with JUnit 4. For both languages, there is also integration with Selenium (software). SBT is used to run the tests and also to generate reports. It is also possible to use code coverage tools by using sbt plugins such as scoverage or jacoco4sbt.
+
+As a full-stack framework, Play includes all the components you need to build Web Applications and REST services, such as an integrated HTTP server, form handling, Cross-Site Request Forgery (CSRF) protection, a powerful routing mechanism, I18n support, and more. 
+
+Play's lightweight, stateless, web-friendly architecture uses Akka and Akka Streams under the covers to provide predictable and minimal resource consumption (CPU, memory, threads). Thanks to its reactive model, applications scale naturally–both horizontally and vertically.
+
+Play is non-opinionated about database access, and integrates with many object relational mapping (ORM) layers. It supports Anorm, Slick, and JPA out of the box, but many customers use NoSQL or other ORMs.
+
+```
+[info] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[info]   Java version is 17. Play supports only 8 and 11.
+[info] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+```
+
+
+Play uses HOCON as its configuration file format.  HOCON has a number of advantages over other config formats, but there are two things that can be used when modifying settings.
+
+
+
+akkahttp
+
+
+![](image/README/play_project_structure.png)
+
+
+
+
+
+
+
+
+
+
+## Scala CV
+
+### Keywords
+
+Functional programming
+
+
+
+### Solution
+
+
+REST - ?
+Web MVC - play, Akka
+Unit test - ScalaTest
+Lib - Scalaz, CATS
+Big Data - Spark
+Config format - HOCON
+Async / Reactive - Future, Promise
+Framework - ZIO, Akka, play
+
+### Stories
+
+???
+
+
+
 
 
