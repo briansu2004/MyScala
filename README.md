@@ -1058,12 +1058,73 @@ Looks like it is still worse than Angular and React.
 Scala.js + Play ? Use Angular, React instead?
 
 
-## 2022-02-21
-
 
 ```
 addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.9.0")
 ```
+
+
+## 2022-02-21
+
+Book: Scala With Cats
+
+
+```
+scalaVersion := "2.13.1"
+libraryDependencies +=
+"org.typelevel" %% "cats-core" % "2.1.0"
+scalacOptions ++= Seq(
+"-Xfatal-warnings"
+)
+```
+
+```
+sbt new scalawithcats/cats-seed.g8
+```
+
+
+```
+sbt new typelevel/sbt-catalysts.g8
+```
+
+
+
+Output:
+
+```dos
+C:\Code\MyScala>sbt new scalawithcats/cats-seed.g8
+[info] welcome to sbt 1.5.8 (Oracle Corporation Java 11.0.12)
+[info] loading global plugins from C:\Users\...\.sbt\1.0\plugins
+[info] set current project to new (in build file:/C:/Users/.../AppData/Local/Temp/sbt_b0150015/new/)
+name [Cats Sandbox]: scala-cats-simple
+author [Anonymous Aardvark]: Brian Su
+package [sandbox]: com.sutek.scala.cats.sandbox
+
+Template applied in C:\Code\MyScala\.\scala-cats-simple
+```
+
+```
+C:\Code\MyScala>sbt new typelevel/sbt-catalysts.g8
+[info] welcome to sbt 1.5.8 (Oracle Corporation Java 11.0.12)
+[info] loading global plugins from C:\Users\...\.sbt\1.0\plugins
+[info] set current project to new (in build file:/C:/Users/.../AppData/Local/Temp/sbt_34d893c1/new/)
+name [aProjectName]: scala-cats-catalysts
+sbt_catalysts_version [0.24]: 
+sbt_version [1.2.8]: 
+publish_org [com.YourOrgName]: com.sutek 
+package [com.sutek]: com.sutek.scala.cats.catalysts
+github_org [com.sutek]: 
+dev_name [your name]: Brian Su
+dev_github_handler [yourhandler_without_@]: briansu2004
+dev_email [yourEmail]: briansu2004@hotmail.com
+
+Template applied in C:\Code\MyScala\.\scala-cats-catalysts
+```
+
+
+
+
+
 
 
 
