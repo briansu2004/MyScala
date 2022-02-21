@@ -1122,7 +1122,155 @@ Template applied in C:\Code\MyScala\.\scala-cats-catalysts
 ```
 
 
+### Good explanations on Type Class (and Type Class instances, implicit) in Scala interview
+
 Type classes are a programming pattern originating in Haskell. They allow us to extend existing libraries with new functionality, without using traditional inheritance, and without altering the original library source code.
+
+A type class is an interface or API that represents some functionality we want to implement. In Scala a type class is represented by a trait with at least one type parameter. For example, we can represent generic “serialize to JSON” behaviour as follows:
+
+
+```scala
+// Define a very simple JSON AST
+sealed trait Json
+final case class JsObject(get: Map[String, Json]) extends Json
+final case class JsString(get: String) extends Json
+final case class JsNumber(get: Double) extends Json
+final case object JsNull extends Json
+// The "serialize to JSON" behaviour is encoded in this trait
+trait JsonWriter[A] {
+    def write(value: A): Json
+}
+```
+
+JsonWriter is our type class in this example, with Json and its subtypes providing supporting code. When we come to implement instances of JsonWriter, the type parameter A will be the concrete type of data we are writing.
+
+The instances of a type class provide implementations of the type class for specific types we care about, which can include types from the Scala standard library and types from our domain model.
+
+In Scala we define instances by creating concrete implementations of the type class and tagging them with the implicit keyword:
+
+```scala
+final case class Person(name: String, email: String)
+
+object JsonWriterInstances {
+    implicit val stringWriter: JsonWriter[String] = new JsonWriter[String] {
+        def write(value: String): Json = JsString(value)
+    }
+
+    implicit val personWriter: JsonWriter[Person] =
+        new JsonWriter[Person] {
+        def write(value: Person): Json =
+            JsObject(Map(
+            "name" -> JsString(value.name),
+            "email" -> JsString(value.email)
+            ))
+        }
+    
+    // etc...
+}
+```
+
+These are known as implicit values (?)
+
+A type class use is any functionality that requires a type class instance to work. In Scala this means any method that accepts instances of the type class as implicit parameters.
+
+Cats provides utilities that make type classes easier to use, and you will sometimes seem these patterns in other libraries. There are two ways it does this: Interface Objects and Interface Syntax.
+
+The simplest way of creating an interface that uses a type class is to place methods in a singleton object:
+
+```scala
+object Json {
+    def toJson[A](value: A)(implicit w: JsonWriter[A]): Json = w.write(value)
+}
+```
+
+To use this object, we import any type class instances we care about and call the relevant method:
+
+```scala
+import JsonWriterInstances._
+Json.toJson(Person("Dave", "dave@example.com"))
+// res1: Json = JsObject(Map("name" -> JsString("Dave"), "email" -> JsString("dave@example.com")))
+```
+
+The compiler spots that we’ve called the toJson method without providing the implicit parameters. It tries to fix this by searching for type class instances of the relevant types and inserting them at the call site:
+
+```scala
+Json.toJson(Person("Dave", "dave@example.com"))(personWriter)
+```
+
+Interface Syntax
+
+We can alternatively use extension methods to extend existing types with interface methods.
+
+```scala
+object JsonSyntax {
+    implicit class JsonWriterOps[A](value: A) {
+        def toJson(implicit w: JsonWriter[A]): Json = w.write(value)
+    }
+}
+```
+
+We use interface syntax by importing it alongside the instances for the types we need:
+
+```scala
+import JsonWriterInstances._
+import JsonSyntax._
+Person("Dave", "dave@example.com").toJson
+// res3: Json = JsObject(Map("name" -> JsString("Dave"), "email" -> JsString("dave@example.com")))
+```
+
+Again, the compiler searches for candidates for the implicit parameters and fills them in for us:
+
+```scala
+Person("Dave", "dave@example.com").toJson(personWriter)
+```
+
+The implicitly Method
+
+The Scala standard library provides a generic type class interface called
+
+```scala
+implicitly. Its definition is very simple:
+def implicitly[A](implicit value: A): A = value
+```
+
+We can use implicitly to summon any value from implicit scope. We provide the type we want and implicitly does the rest:
+
+```scala
+import JsonWriterInstances._
+implicitly[JsonWriter[String]]
+// res5: JsonWriter[String] = repl.Session$App0$JsonWriterInstances$$anon$1@6fccdc48
+```
+
+
+```
+Json.toJson("A string!")
+```
+
+
+The places where the compiler searches for candidate instances is known as the implicit scope. The implicit scope applies at the call site; that is the point where we call a method with an implicit parameter. The implicit scope which roughly consists of:
+
+    - local or inherited definitions;
+    - imported definitions;
+    - definitions in the companion object of the type class or the parameter type (in this case JsonWriter or String).
+    
+
+Definitions are only included in implicit scope if they are tagged with the implicit keyword. 
+
+If the compiler sees multiple candidate definitions, it fails with an ambiguous implicit values error.
+
+Recursive Implicit Resolution / type class composition
+
+The power of type classes and implicits lies in the compiler’s ability to combine implicit definitions when searching for candidate instances.
+
+```scala
+implicit def optionWriter[A](implicit writer: JsonWriter[A]): JsonWriter[Option[A]] = new JsonWriter[Option[A]] {
+    def write(option: Option[A]): Json =
+        option match {
+            case Some(aValue) => writer.write(aValue)
+            case None => JsNull
+        }
+}
+```
 
 
 
