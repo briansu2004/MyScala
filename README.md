@@ -1045,13 +1045,81 @@ curl -X DELETE localhost:9000/api/v1/todo/888
 ![](image/README/scala_rest_play_delete_all.png)
 
 
+### GitBook
+
+https://app.gitbook.com/home
+
+
+
+### Scala.js
+
+Looks like it is still worse than Angular and React.
+
+Scala.js + Play ? Use Angular, React instead?
+
+
+## 2022-02-21
+
+
+```
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.9.0")
+```
+
 
 
 ## Scala CV
 
+### Samples
+
+
+Good experience in writing Spark applications using Python and Scala.
+
+Used Scala sbt to develop Scala coded spark projects and executed using spark-submit
+
+Involved in developing a linear regression model to predict a continuous measurement for improving the observation on wind turbine data developed using spark with Scala API.
+
+Used Spark and Spark-SQL to read the parquet data and create the tables in hive using the Scala API.
+
+Implemented Spark using Scala and Spark SQL for faster testing and processing of data.
+
+Implemented Spark using Scala and utilizing Data frames and Spark SQL API for faster processing of data.
+
+Experienced in working with spark eco system using Spark SQL and Scala queries on different formats like Text file, CSV file.
+
+Expertized in implementing Spark using Scala and Spark SQL for faster testing and processing of data responsible to manage data from different sources.
+
+Proven experience in building in Data Driven applications using a combination of Java/Scala and the Spark framework
+
+Typesafe Reactive Platform (Scala, Akka, and Play)
+
+Scala.js
+
+Full Stack Scala with the Play Framework and Scala.js
+
+Udash is a Scala.js framework for building beautiful and maintainable web applications.
+
+
+
+
+
+
 ### Keywords
 
 Functional programming
+
+DSL
+
+- Akka
+- Finagle
+- Spark
+- Scalding
+- Play
+- Lift
+- Scalatra
+- Scalaz
+- Cats
+- ScalaTest
+- Specs2
 
 
 
@@ -1077,13 +1145,11 @@ Framework - ZIO, play, Akka (Akka Typed, Akka Streams, Akka HTTP, Akka Classic P
 ## To be forked
 
 
-https://github.com/hseeberger/akka-http-json
+https://github.com/ochrons/scalajs-spa-tutorial
 
-https://github.com/circe/circe
+https://github.com/Filemon279/play-scalajs-universal
 
-https://github.com/dogheadbone/monica-api-scripts
+https://github.com/sherpal/Scala-Google-Spreadsheets
 
-
-
-
+https://github.com/UdashFramework/
 
