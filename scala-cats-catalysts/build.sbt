@@ -6,10 +6,10 @@ import _root_.sbtcrossproject.CrossPlugin.autoImport.CrossType
 addCommandAlias("gitSnapshots", ";set version in ThisBuild := git.gitDescribedVersion.value.get + \"-SNAPSHOT\"")
 
 val apache2 = "Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.html")
-val gh = GitHubSettings(org = "com.sutek", proj = "scala-cats-catalysts", publishOrg = "com.sutek", license = apache2)
+val gh = GitHubSettings(org = "com.YourOrgName", proj = "scala-cats-catalysts", publishOrg = "com.YourOrgName", license = apache2)
 
 val mainDev =
-  Developer("Brian Su", "@briansu2004", "briansu2004@hotmail.com", new java.net.URL("http://github.com/briansu2004"))
+  Developer("your name", "@yourhandler_without_@", "yourEmail", new java.net.URL("http://github.com/yourhandler_without_@"))
 
 val devs = List(Developer)
 
@@ -69,14 +69,14 @@ lazy val docs = project
     crossScalaVersions := Seq(scalaVersion.value),
     scalacOptions in Tut ~= (_.filterNot(Set("-Ywarn-unused:imports"))),
     micrositeSettings(gh, mainDev,  "scala-cats-catalysts"),
-    micrositeDocumentationUrl := "/scala-cats-catalysts/api/com.sutek.scala.cats.catalysts/index.html",
+    micrositeDocumentationUrl := "/scala-cats-catalysts/api/com.YourOrgName/index.html",
     micrositeDocumentationLabelDescription := "API Documentation",
-    micrositeGithubOwner := "com.sutek"
+    micrositeGithubOwner := "com.YourOrgName"
   )
 lazy val buildSettings = sharedBuildSettings(gh, libs)
 
 lazy val commonSettings = addCompilerPlugins(libs, "kind-projector") ++ sharedCommonSettings ++ scalacAllSettings ++ Seq(
-  organization := "com.sutek",
+  organization := "com.YourOrgName",
   parallelExecution in Test := false,
   crossScalaVersions := Seq(libs.vers("scalac_2.11"), scalaVersion.value)
 )

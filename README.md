@@ -1066,7 +1066,7 @@ addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.9.0")
 
 ## 2022-02-21
 
-Book: Scala With Cats
+### Book: Scala With Cats
 
 
 ```
@@ -1122,9 +1122,13 @@ Template applied in C:\Code\MyScala\.\scala-cats-catalysts
 ```
 
 
+Type classes are a programming pattern originating in Haskell. They allow us to extend existing libraries with new functionality, without using traditional inheritance, and without altering the original library source code.
 
 
 
+### sbt task failed, see log for details
+
+IntelliJ -> Help -> Show Logs in Explorer -> C:\Users\...\AppData\Local\JetBrains\IdeaIC2021.3\log\idea.log
 
 
 
@@ -1213,4 +1217,14 @@ https://github.com/Filemon279/play-scalajs-universal
 https://github.com/sherpal/Scala-Google-Spreadsheets
 
 https://github.com/UdashFramework/
+
+https://github.com/scalameta/mdoc
+
+https://github.com/scalawithcats/scala-with-cats
+
+
+
+
+
+
 

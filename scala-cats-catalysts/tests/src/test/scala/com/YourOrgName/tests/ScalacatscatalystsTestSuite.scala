@@ -1,4 +1,4 @@
-package com.sutek.scala.cats.catalysts
+package com.YourOrgName
 package tests
 
 import org.scalatest.matchers.should.Matchers
