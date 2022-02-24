@@ -188,14 +188,12 @@ Big Data interview
 ## 2022-02-04 1st Scala job from the agent
 
 - BOA Java/Scala developer!
-    from the buddy agent Collbera
+  from the buddy agent Collbera
 
 - Pluralsight free weekend!
-    - 7 Scala courses and certificates
+  - 7 Scala courses and certificates
 
 ## 2022-02-07 1st Scala job talk with agent
-
-
 
 ## Scala Worksheet and Compiling Server issue and solution
 
@@ -210,7 +208,6 @@ The issues are something like "Compiling Server has issues" blah blah blah ...
 Changing JDK to 13 will solve this issue, even may have some warnings.
 
 ![](image/README/scala_worksheet_work.png)
-
 
 ## 2022-02-09 Zhi
 
@@ -252,14 +249,9 @@ Church number
 
 CATS Effect! not cats
 
-
-
 The Bay, Scotia, Citi, Meilin, HSBC, Disney, CIBC (tiger), ...
 
-
 Questions
-
-
 
 ### Code practice tips
 
@@ -268,7 +260,6 @@ map, flatmap, groupBy
 type class
 
 context bound: memorize it
-
 
 ### Job Search tips
 
@@ -284,11 +275,9 @@ Iws
 
 Offers
 
-
 ### Homework
 
 Make a list of future to a future of list
-
 
 Answer:
 
@@ -313,14 +302,13 @@ REST API, microservices, Big Data, ZIO
 
 3-yr contract
 
-15 ppl team (2 BA, 1 PM, 7 dev, some offshore devs); the whole team is quite large 
+15 ppl team (2 BA, 1 PM, 7 dev, some offshore devs); the whole team is quite large
 
 ## 2022-02-12 re-create sbt project
 
 ![](image/README/create_sbt_project_01.png)
 
 ![](image/README/create_sbt_project_02.png)
-
 
 build.sbt
 
@@ -347,16 +335,13 @@ Be careful to move files in IJ
 
 Always use refactor to move, or you will break things.
 
-
 ### Scala: Any, AnyVal, AnyRef
 
 Type Hierarchies in Scala
 
 https://www.baeldung.com/scala/type-hierarchies#:~:text=2.2.-,AnyVal,are%20an%20abstract%20final%20type.
 
-
 ![](image/README/Scala_Any.png)
-
 
 ### Scala: Case class
 
@@ -378,16 +363,13 @@ Type Classes in Scala
 
 https://www.baeldung.com/scala/type-classes
 
-
 ### Scala: mkString
 
-You can make use of the mkString( ) method to concatenate the resulting list 
-
+You can make use of the mkString( ) method to concatenate the resulting list
 
 ### Scala: WorkSheet
 
 WorkSheet is very helpful.
-
 
 ### Scala: Monad
 
@@ -395,16 +377,13 @@ Monads in Scala
 
 https://www.baeldung.com/scala/monads
 
-
 In Scala, Monads is a construction which performs successive calculations. It is an object which covers the other object. It is worth noting that here, the output of an operation at some step is an input to another computations, which is a parent to the recent step of the program stated. Monad is neither a class nor a trait, it is a concept. The maximum collections of the Scala are Monads but not all the Monads are collections, there are several Monads which are containers like Options in Scala. In short, we can say that in Scala the data types that implements map as well as flatMap() like Options, Lists, etc. are called as Monads.
 
 Collections that support map as well as flatMap are called as monadic.
 
-
-
 Other Collections
 
-Besides List, there are a number of other collections in the Scala standard library. The most commonly used of these are Map, Set, Vector, and Stream. 
+Besides List, there are a number of other collections in the Scala standard library. The most commonly used of these are Map, Set, Vector, and Stream.
 
 - Option
 - List
@@ -413,17 +392,11 @@ Besides List, there are a number of other collections in the Scala standard libr
 - Vector
 - Stream -> Lazy List
 
-
-
 Why Vector?
 
 Use of List is very common in Scala, but it can sometimes be inefficient for random access because the time complexity of accessing an element is O(n). Scala provides an alternative collection, Vector, that is optimized for random access by storing its elements in a tree structure that has little memory overhead. All operations on a Vector happen in effectively constant time, which means that for large collections it can be significantly more efficient than List.
 
-
 A Stream is essentially a List with an undetermined number of elements, which are computed lazily. A “lazy” value is one that is only evaluated at the time it’s required.
-
-
-
 
 ### Scala: for-comprehension
 
@@ -431,13 +404,11 @@ for === flatMap
 
 yield === map
 
-
 A Comprehensive Guide to For-Comprehension in Scala
 
 https://www.baeldung.com/scala/for-comprehension
 
 In imperative programming languages, we use loops such as for-loop and while-loop to iterate over collections. The Scala programming language introduced a new kind of loop: the for-comprehension.
-
 
 ```scala
     val partyResultList = tradingDataList.groupBy(_.party).map {
@@ -518,9 +489,9 @@ class Baz[A]  // An invariant class
 
 ![](image/README/variance_example_01.png)
 
-In this example, 
+In this example,
 
-- A has to be the child type of C  (because of -A)
+- A has to be the child type of C (because of -A)
 - B has to be the parent class of D (because of +B)
 
 Type safe is the key!
@@ -531,10 +502,7 @@ Why type safe?
 
 Python is not type safe. Some issues happen only in runtime - can't be identitied in compile-time.
 
-
-
 ### Scala: CATS
-
 
 Scala – Introduction to Cats
 https://www.baeldung.com/scala/cats-intro
@@ -545,8 +513,7 @@ https://github.com/typelevel/cats
 libraryDependencies += "org.typelevel" %% "cats-core" % "2.2.0"
 ```
 
-
-A type class is a pattern in programming originating in Haskell. It allows us to extend existing libraries with new functionality, without using traditional inheritance, and without altering the original library source code. 
+A type class is a pattern in programming originating in Haskell. It allows us to extend existing libraries with new functionality, without using traditional inheritance, and without altering the original library source code.
 
 In Scala Cats, components of type classes can be specified as:
 
@@ -561,11 +528,9 @@ What is pure in Scala?
 
 A function is called pure function if it always returns the same result for same argument values and it has no side effects like modifying an argument (or global variable) or outputting something
 
-
-
 Examples of pure functions
 
-Given that definition of pure functions, as you might imagine, methods like these in the scala.math._ package are pure functions:
+Given that definition of pure functions, as you might imagine, methods like these in the scala.math.\_ package are pure functions:
 
 - abs
 - ceil
@@ -578,15 +543,11 @@ These Scala String methods are also pure functions:
 - length
 - substring
 
-
 Examples of impure functions
-
 
 - foreach
 
-- Date and time related methods like getDayOfWeek, getHour, and getMinute are all impure because their output depends on something other than their input parameters. 
-
-
+- Date and time related methods like getDayOfWeek, getHour, and getMinute are all impure because their output depends on something other than their input parameters.
 
 ## 2022-02-14 BOA iw 2nd
 
@@ -595,7 +556,6 @@ The overall review is that your code is good! The end result (as discussed) is l
 We'll ask you a bunch of questions pertaining to Scala, Java and your experiences on different projects and such. Taking the lead on the interview will be my lead developers (Sean and Leo) – and there will be a behavioral interview section as well.
 
 Failed!
-
 
 ## Scala: CATS
 
@@ -615,15 +575,9 @@ val res0: scala.collection.immutable.Map[Int,List[String]] = Map(1 -> List(a, c)
 
 ![](image/README/cats_01.png)
 
-
-
-
-
-
 ## Misc
 
 ### Self-cultivation
-
 
 ## ? Questions to StackOverflow
 
@@ -645,26 +599,23 @@ Why this line doesn't work?
     }.toList
 ```
 
-
 ### Does Python have fo-comprehension?
 
 ### Does JavaScript have fo-comprehension?
 
+## Questions to ask on Zhi's new class 2022-02-16
 
-
-## Questions to ask on Zhi's new class 2022-02-16 
-
-- Why ZIO examples: 
-    for { _ <- ... }
+- Why ZIO examples:
+  for { \_ <- ... }
 
 - What do ZIO projects look like?
-    - ZIO + Kafka?
+
+  - ZIO + Kafka?
 
 - What is the knowledge point for the Future List interview question?
-    - sequence
+  - sequence
 
-
-##  2022-02-16 Zhi
+## 2022-02-16 Zhi
 
 BOA iw q
 
@@ -678,20 +629,20 @@ BOA iw q V2
 
 - How to sum two Option[Int] in scala
 
-    - Solution 1: CATS / monoid
-  
+  - Solution 1: CATS / monoid
+
 ```dos
 import cats.implicits._
 
 a |+| b
 ```
 
-    - Solution 2: map and flatmap / for comprehension 
+    - Solution 2: map and flatmap / for comprehension
 
 
     - Soltion 3: reduceOption
-    
-    
+
+
     - Not a good solution: function
 
 ```dos
@@ -710,7 +661,6 @@ def addOptionInt(a: Option[Int], b: Option[Int]): Option[Int] = {
 ```
 a.getOrElse(0) + b.getOrElse(0)
 ```
-
 
     - Combination
 
@@ -756,20 +706,15 @@ output(a, b)
 
 ![](image/README/option_int_add_solutions_02.png)
 
-
-Looks like 
+Looks like
 
 a |+| b
 
 and
 
-(a ++ b).reduceOption(_ + _) 
+(a ++ b).reduceOption(_ + _)
 
 are best answers.
-
-
-
-
 
 ## 2022-02-19
 
@@ -808,19 +753,19 @@ libraryDependencies += "org.scalaz" %% "scalaz-effect" % "7.3.0-SNAPSHOT"
 ```
 
 Community
+
 - Gitter: Gitter
 - IRC: Freenode
 - Mailing List: Google Groups
 - Voice Chat: Discord
 
-
 ### Cats Effect
 
 The pure asynchronous runtime for Scala
 
-Cats Effect is a high-performance, asynchronous, composable framework for building real-world applications in a purely functional style within the Typelevel ecosystem. 
+Cats Effect is a high-performance, asynchronous, composable framework for building real-world applications in a purely functional style within the Typelevel ecosystem.
 
-It provides a concrete tool, known as "the IO monad", for capturing and controlling actions, often referred to as "effects", that your program wishes to perform within a resource-safe, typed context with seamless support for concurrency and coordination. 
+It provides a concrete tool, known as "the IO monad", for capturing and controlling actions, often referred to as "effects", that your program wishes to perform within a resource-safe, typed context with seamless support for concurrency and coordination.
 
 These effects may be asynchronous (callback-driven) or synchronous (directly returning values); they may return within microseconds or run infinitely.
 
@@ -830,24 +775,19 @@ Even more importantly, Cats Effect defines a set of typeclasses which define wha
 
 Learn the key type classes of: Functor, Monoid, Applicative, and Monad
 
-
-
 ### sbt (aka scala build tool)
 
 sbt is an open-source build tool for Scala and Java projects, similar to Apache's Maven and Ant.
 
-
 ### Lightbend (<- Typesafe)
 
 Lightbend, formerly known as Typesafe, is a company founded by Martin Odersky, the creator of the Scala programming language, Jonas Bonér, the creator of the Akka middleware, and Paul Phillips in 2011.
-
 
 ### Flash scope vs Session scope
 
 The Flash scope works exactly like the Session, but with one difference:
 
 - data are kept for only one request
-
 
 ### Scala Web MVC & REST : Play framework (built on Akka)
 
@@ -857,17 +797,16 @@ Built on Akka, Play provides predictable and minimal resource consumption (CPU, 
 
 Play Framework is an open-source web application framework which follows the model–view–controller (MVC) architectural pattern.
 
-
 - Stateless: Play 2 is fully RESTful – there is no Java EE session per connection.
 - Integrated unit testing: JUnit and Selenium support is included in the core.
 - API comes with most required elements built-in.
 - Asynchronous I/O: due to using Akka HTTP as its web server, Play can service long requests asynchronously rather than tying up HTTP threads doing business logic like Java EE frameworks that don't use the asynchronous support offered by Servlet 3.0.[20]
 - Modular architecture: like Ruby on Rails and Django, Play comes with the concept of modules.
-Native Scala support: Play 2 uses Scala internally but also exposes both a Scala API, and a Java API that is deliberately slightly different to fit in with Java conventions, and - Play is completely interoperable with Java.
+  Native Scala support: Play 2 uses Scala internally but also exposes both a Scala API, and a Java API that is deliberately slightly different to fit in with Java conventions, and - Play is completely interoperable with Java.
 
 Play provides integration with test frameworks for unit testing and functional testing for both Scala and Java applications. For Scala, integrations with Scalatest and Specs2 are provided out-of-the-box and, for Java, there is integration with JUnit 4. For both languages, there is also integration with Selenium (software). SBT is used to run the tests and also to generate reports. It is also possible to use code coverage tools by using sbt plugins such as scoverage or jacoco4sbt.
 
-As a full-stack framework, Play includes all the components you need to build Web Applications and REST services, such as an integrated HTTP server, form handling, Cross-Site Request Forgery (CSRF) protection, a powerful routing mechanism, I18n support, and more. 
+As a full-stack framework, Play includes all the components you need to build Web Applications and REST services, such as an integrated HTTP server, form handling, Cross-Site Request Forgery (CSRF) protection, a powerful routing mechanism, I18n support, and more.
 
 Play's lightweight, stateless, web-friendly architecture uses Akka and Akka Streams under the covers to provide predictable and minimal resource consumption (CPU, memory, threads). Thanks to its reactive model, applications scale naturally–both horizontally and vertically.
 
@@ -879,18 +818,15 @@ Play is non-opinionated about database access, and integrates with many object r
 [info] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```
 
-
-Play uses HOCON as its configuration file format.  HOCON has a number of advantages over other config formats, but there are two things that can be used when modifying settings.
-
+Play uses HOCON as its configuration file format. HOCON has a number of advantages over other config formats, but there are two things that can be used when modifying settings.
 
 ![](image/README/play_project_structure.png)
 
-### Scala & Akka HTTP 
+### Scala & Akka HTTP
 
 akkahttp
 
 Akka HTTP Client API
-
 
 ### Akka HTTP & JSON: Integrating Spray, Circe and Jackson with Akka HTTP, with Scala
 
@@ -898,16 +834,13 @@ Akka HTTP Client API
 
 - Spray
 
-
 - Circe
 
 A JSON library for Scala powered by Cats
 
-
 - Jackson
 
 ## 2022-02-20
-
 
 Building a REST API in Scala with Play Framework
 
@@ -917,12 +850,12 @@ C:\Code\MyScala>sbt new playframework/play-scala-seed.g8
 [info] loading global plugins from C:\Users\...\.sbt\1.0\plugins
 [info] set current project to new (in build file:/C:/Users/.../AppData/Local/Temp/sbt_2708936f/new/)
 
-This template generates a Play Scala project 
+This template generates a Play Scala project
 
 name [play-scala-seed]: scala-rest-play-simple
 organization [com.example]: com.sutek
-play_version [2.8.13]: 
-scala_version [2.13.8]: 
+play_version [2.8.13]:
+scala_version [2.13.8]:
 
 Template applied in C:\Code\MyScala\.\scala-rest-play-simple
 
@@ -984,7 +917,6 @@ http://localhost:9000
 
 ![](image/README/welcome_to_play.png)
 
-
 Open the folder in IntelliJ.
 
 Change the JDK to v11.
@@ -1008,7 +940,6 @@ Created
 BadRequest
 ```
 
-
 How to add a config in IJ instead of run the command?
 
 ```dos
@@ -1016,7 +947,6 @@ sbt run
 ```
 
 Once it starts, it will automatically "refresh" itself with your code changes - but in the lazy way :-)
-
 
 ```
 curl localhost:9000/api/v1/todo
@@ -1044,12 +974,9 @@ curl -X DELETE localhost:9000/api/v1/todo/888
 
 ![](image/README/scala_rest_play_delete_all.png)
 
-
 ### GitBook
 
 https://app.gitbook.com/home
-
-
 
 ### Scala.js
 
@@ -1057,17 +984,13 @@ Looks like it is still worse than Angular and React.
 
 Scala.js + Play ? Use Angular, React instead?
 
-
-
 ```
 addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.9.0")
 ```
 
-
 ## 2022-02-21
 
 ### Book: Scala With Cats
-
 
 ```
 scalaVersion := "2.13.1"
@@ -1082,12 +1005,9 @@ scalacOptions ++= Seq(
 sbt new scalawithcats/cats-seed.g8
 ```
 
-
 ```
 sbt new typelevel/sbt-catalysts.g8
 ```
-
-
 
 Output:
 
@@ -1109,11 +1029,11 @@ C:\Code\MyScala>sbt new typelevel/sbt-catalysts.g8
 [info] loading global plugins from C:\Users\...\.sbt\1.0\plugins
 [info] set current project to new (in build file:/C:/Users/.../AppData/Local/Temp/sbt_34d893c1/new/)
 name [aProjectName]: scala-cats-catalysts
-sbt_catalysts_version [0.24]: 
-sbt_version [1.2.8]: 
-publish_org [com.YourOrgName]: com.sutek 
+sbt_catalysts_version [0.24]:
+sbt_version [1.2.8]:
+publish_org [com.YourOrgName]: com.sutek
 package [com.sutek]: com.sutek.scala.cats.catalysts
-github_org [com.sutek]: 
+github_org [com.sutek]:
 dev_name [your name]: Brian Su
 dev_github_handler [yourhandler_without_@]: briansu2004
 dev_email [yourEmail]: briansu2004@hotmail.com
@@ -1121,13 +1041,11 @@ dev_email [yourEmail]: briansu2004@hotmail.com
 Template applied in C:\Code\MyScala\.\scala-cats-catalysts
 ```
 
-
 ### Good explanations on Type Class (and Type Class instances, implicit) in Scala interview
 
 Type classes are a programming pattern originating in Haskell. They allow us to extend existing libraries with new functionality, without using traditional inheritance, and without altering the original library source code.
 
 A type class is an interface or API that represents some functionality we want to implement. In Scala a type class is represented by a trait with at least one type parameter. For example, we can represent generic “serialize to JSON” behaviour as follows:
-
 
 ```scala
 // Define a very simple JSON AST
@@ -1164,7 +1082,7 @@ object JsonWriterInstances {
             "email" -> JsString(value.email)
             ))
         }
-    
+
     // etc...
 }
 ```
@@ -1241,20 +1159,17 @@ implicitly[JsonWriter[String]]
 // res5: JsonWriter[String] = repl.Session$App0$JsonWriterInstances$$anon$1@6fccdc48
 ```
 
-
 ```
 Json.toJson("A string!")
 ```
-
 
 The places where the compiler searches for candidate instances is known as the implicit scope. The implicit scope applies at the call site; that is the point where we call a method with an implicit parameter. The implicit scope which roughly consists of:
 
     - local or inherited definitions;
     - imported definitions;
     - definitions in the companion object of the type class or the parameter type (in this case JsonWriter or String).
-    
 
-Definitions are only included in implicit scope if they are tagged with the implicit keyword. 
+Definitions are only included in implicit scope if they are tagged with the implicit keyword.
 
 If the compiler sees multiple candidate definitions, it fails with an ambiguous implicit values error.
 
@@ -1272,18 +1187,13 @@ implicit def optionWriter[A](implicit writer: JsonWriter[A]): JsonWriter[Option[
 }
 ```
 
-
-
 ### sbt task failed, see log for details
 
 IntelliJ -> Help -> Show Logs in Explorer -> C:\Users\...\AppData\Local\JetBrains\IdeaIC2021.3\log\idea.log
 
-
-
 ## Scala CV
 
 ### Samples
-
 
 Good experience in writing Spark applications using Python and Scala.
 
@@ -1311,10 +1221,7 @@ Full Stack Scala with the Play Framework and Scala.js
 
 Udash is a Scala.js framework for building beautiful and maintainable web applications.
 
-
-
-
-
+Lift
 
 ### Keywords
 
@@ -1334,13 +1241,32 @@ DSL
 - ScalaTest
 - Specs2
 
+Lift is a free and open-source web framework that is designed for the Scala programming language.
 
+ZIO is a zero-dependency library for asynchronous and concurrent programming in Scala. It is a functional effect system in Scala. There are several functional effect systems in functional programming in the Scala community, such as ZIO, Cats Effect, and Monix.
+
+ZIO is a next-generation fabric for building async, concurrent, and distributed applications. ZIO is powered by fibers, and uses deep composition and static types to help developers rapidly build robust, reactive, powerful applications. The broader ZIO ecosystem includes modular components that rapid backend development, including solutions for GraphQL, RDBMS, NoSQL, big data, analytics, REST APIs, authentication, and much more.
+
+ZIO ecosystem:
+
+- ZIO
+- ZIO Streams
+- Caliban (GraphQL)
+- ZIO NIO
+- ZIO Keeper
+- ZIO Kafka
+
+Apache Spark is a comprehensive framework for executing distributed data transformations. Spark can be used to efficiently transfer and transform data between various locations, train machine learning models and perform inference, and more.
+
+Kafka Streams is a library for creating stateful stream processing applications over data stored in Kafka topics. As a library, it is lighter weight than other alternatives, being embeddable in existing applications and not requiring standalone cluster deployments.
+
+Chunk is a ZIOs immutable array-backed collection. Every time we are working with streams, we are always working with chunks. There are no streams with individual elements, these streams have always chunks in their underlying implementation.
 
 ### Solution
 
-
-REST - ?
+REST - play
 Web MVC - play, Akka
+UI - Scala.js
 Unit test - ScalaTest
 Lib - Scalaz, CATS
 Big Data - Spark (Spark Streaming, SparkQL, Spark Optimization, Spark performance tuning)
@@ -1348,31 +1274,79 @@ Config format - HOCON
 Async / Reactive - Future, Promise
 Framework - ZIO, play, Akka (Akka Typed, Akka Streams, Akka HTTP, Akka Classic Persistence, Akka Classic Clustering, Akka Classic Serialization)
 
-
 ### Stories
 
 ???
 
+## 2022-02-23
 
+### ZIO
+
+https://www.youtube.com/watch?v=6A1SA5Be9qw
+
+How to live coding with ZIO?
+
+ZIO 1.x or 2.x?
+
+### ZIO effect
+
+ZIO vs ZIO effect
+
+ZIO can convert both synchronous and asynchronous side-effects into ZIO effects (pure values). These functions can be used to wrap procedural code, allowing you to seamlessly use all features of ZIO with legacy Scala and Java code, as well as third-party libraries.
+
+A Future can be converted into a ZIO effect using ZIO.fromFuture.
+
+```
+import scala.concurrent.Future
+
+lazy val future = Future.successful("Hello!")
+
+val zfuture: Task[String] =
+  ZIO.fromFuture { implicit ec =>
+    future.map(_ => "Goodbye!")
+  }
+```
+
+### Monix
+
+Monix is a high-performance Scala / Scala.js library for composing asynchronous, event-based programs.
+
+### http4s
+
+http4s + cats effect vs http4s + zio vs zio-http
+
+Typeful, functional, streaming HTTP for Scala
+
+### ZIO get started
+
+https://www.baeldung.com/scala/zio-intro
 
 ## To be forked
 
+https://github.com/DevInsideYou/docker-compose-postgres.g8
 
-https://github.com/ochrons/scalajs-spa-tutorial
+https://github.com/DevInsideYou/cat.g8
 
-https://github.com/Filemon279/play-scalajs-universal
+https://github.com/monix/monix
 
-https://github.com/sherpal/Scala-Google-Spreadsheets
+https://github.com/http4s/http4s
 
-https://github.com/UdashFramework/
+https://github.com/cowtowncoder/java-uuid-generator
 
-https://github.com/scalameta/mdoc
+https://github.com/wi101/zio-examples
 
-https://github.com/scalawithcats/scala-with-cats
+https://github.com/ghostdogpr/zio-cheatsheet
 
+## 2022-02-23 Zhi
 
+Kleisli
 
+Cats mapN
 
+Ctrl+Shift+T -> create a new test class or jump to it
 
+AnyFlatSpec
 
+Brian Xiang, Medium, ZIOStream
 
+python generator
