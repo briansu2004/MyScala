@@ -1323,12 +1323,6 @@ https://www.baeldung.com/scala/zio-intro
 
 ## To be forked
 
-https://github.com/DevInsideYou/docker-compose-postgres.g8
-
-https://github.com/DevInsideYou/cat.g8
-
-https://github.com/monix/monix
-
 https://github.com/http4s/http4s
 
 https://github.com/cowtowncoder/java-uuid-generator
@@ -1350,3 +1344,11 @@ AnyFlatSpec
 Brian Xiang, Medium, ZIOStream
 
 python generator
+
+## 2022-02-25
+
+- Confirm Cognizant iw on Mar 3
+
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWIzMDYxOTYtMjA2MS00ZWVmLTk2OGMtZmQ0YzQ5ZjBmN2Rm%40thread.v2/0?context=%7b%22Tid%22%3a%22de08c407-19b9-427d-9fe8-edf254300ca7%22%2c%22Oid%22%3a%2254e7f6b8-689d-4c6c-8017-5890c6922ed1%22%7d
+
+## 2022-02-26
