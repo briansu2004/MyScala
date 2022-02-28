@@ -6,26 +6,6 @@ My Scala
 
 https://docs.scala-lang.org/cheatsheets/index.html
 
-## Coming soon
-
-- 99 Scala Problems
-
-- REST API with Akka HTTP
-
-- Play framework for REST API
-
-- ScalaTest for test
-
-- ScalaMock for mock
-
-- Scalafix for lint
-
-- ? for Scala DevOps
-
-  Buddy CI/CD?
-
-- ? for Scala ?
-
 ## Variance : Covariance vs Contravariance vs Invariance
 
 方差：协方差 vs 逆变 vs 不变
@@ -46,155 +26,6 @@ Variance is the correlation of subtyping relationships of complex types and the 
 
 Generic classes in Scala are invariant by default.
 
-## 2022-01-05 Zhi
-
-https://github.com/zhiwilliam/couses
-
-## 2022-01-12 Zhi
-
-DSL
-
--A +B
-
-C D
-
-type class ?
-
-```scala
-val map: Map[String, List[Int]] = Map("a" -> List(1, 2, 3), "b" -> List(2, 3))
-  // type class
-  //println(map.partition(x => x._2.length > 2))
-  map.partitionByValue(_ <= 2)
-  // (Map("a"-> List(1,2), "b" -> List(2)), Map("a"-> List(3), "b" -> List(3)))
-```
-
-```scala
-val map: Map[A, List[B]]
-```
-
-Use span!
-
-Case class doesn't have methods, so no need to be extended by case classes.
-
-Type class doesn't have inheritance.
-
-Rabbits don't meow, bark or speak.
-
-cio schema
-
-foldLeft +
-
-foldLeft - ==> foldLeft +(-)
-
-## 2022-01-19 Zhi
-
-cio project vs Spring
-
-"<%" ducking type
-
-Structural types
-
-"Object" keyword in Scala : singleton (pattern)
-
-It uses the least memory
-
-![](image/README/Scala_collection_mutable.png)
-
-![](image/README/Scala_collection_immutable.png)
-
-Grouping all impilicit objects in implicits ==> easy to import \*.implicits.\_
-
-Quill
-
-Syntax sugar for implicit
-
-Course2, test.scala -> check it out
-
-try to find out the best mutual funds (best increasements)
-
-map + flatmap + pure
-
-flatmap is sequential, not in parallel
-
-flatmap: A->F[B]
-
-need to get the values!
-
-need to create a new box, can't use the old box
-
-need to use Future API
-
-In Scala, flatMap() method is identical to the map() method, but the only difference is that in flatMap the inner grouping of an item is removed and a sequence is generated. It can be defined as a blend of map method and flatten method.
-
-map: A->B
-
-blackbox
-
-doesn't need to get the values!
-
-Applicative
-
-How to do flatmap in parallel?
-
-Use cats library or Future
-
-try and future are eager only, others are lazy
-
-Context bound
-
-Java HashMap
-
-HashMap issues and solutions in Java 7
-
-HashMap issues and solutions in Java 8
-
-Ppl from Citi capital market and RBC are generally better
-
-Core Java interview
-
-- cache friendly
-
-- non-blocking
-
-Big Data interview
-
-- Garbage collection
-
-## 2022-02-02 Zhi
-
-- iw q: context bound, Monad, map, flatmap, Functor, ...
-- cats, kitter
-- fs2, http4s
-- co.fs2
-- Functor, Foldable, Applicative
-- CO ? ZIO (resource management, multi-threading, ...)
-- Use play (future) before CO
-- hoccon === JSON
-- tsec authentication
-- how to async?
-- how to DI?
-- how to work with Kafka?
-- Spring Boot uses annotation for Redis - this has cons
-- Fail fast for cloud / k8s infrastructure
-- Fail propogate to the parent layer in the cloud / distributed environment
-- Use CATS, ZIO to do async
-- cache friendly : CPU cache, L1/L2/L3, padding
-- Scala pathways: Big Data / data processing / Spark & Streaming, REST API, DSL, ...
-- fifo queue
-- Use Scala to build a project for the job interview
-- SQL iw: Lin Ping lao shi's SQL - google search
-- Java iw: Hashmap vs Hashtable, Bean Factory, aspect, design pattern, ...
-
-## 2022-02-04 1st Scala job from the agent
-
-- BOA Java/Scala developer!
-  from the buddy agent Collbera
-
-- Pluralsight free weekend!
-  - 7 Scala courses and certificates
-
-## 2022-02-07 1st Scala job talk with agent
-
 ## Scala Worksheet and Compiling Server issue and solution
 
 Worksheet is a good feature.
@@ -208,101 +39,6 @@ The issues are something like "Compiling Server has issues" blah blah blah ...
 Changing JDK to 13 will solve this issue, even may have some warnings.
 
 ![](image/README/scala_worksheet_work.png)
-
-## 2022-02-09 Zhi
-
-Kleisli
-
-Stream for big data process
-
-Tagless Final pattern in Scala
-https://www.baeldung.com/scala/tagless-final-pattern#:~:text=In%20this%20long%20article%2C%20we,is%20available%20over%20on%20GitHub.
-https://github.com/Baeldung/scala-tutorials/tree/master/scala-core-fp
-
-IO.pure <-> ZIO.success
-
-Read Tagless Final before learning CATS
-
-ZIO and CATS are similar
-
-Stream:
-FS2 stream
-spark stream
-akka stream
-...
-
-scala shapeless
-
-CATS OptionT
-
-Monad transformer is the most difficult part in Monad
-
-OptionT, ConT, IorT ... T is for Transformer
-
-范畴论! category theory
-
-h after g
-
-丘奇数 / 邱奇数
-
-Church number
-
-CATS Effect! not cats
-
-The Bay, Scotia, Citi, Meilin, HSBC, Disney, CIBC (tiger), ...
-
-Questions
-
-### Code practice tips
-
-map, flatmap, groupBy
-
-type class
-
-context bound: memorize it
-
-### Job Search tips
-
-Make a story (find a path: I choose REST API)
-
-Update CV
-
-Talk to Mr. Zhi
-
-Update LinkedIn
-
-Iws
-
-Offers
-
-### Homework
-
-Make a list of future to a future of list
-
-Answer:
-
-```scala
-import scala.concurrent.Future
-
-object ListOfFuture2FutureOfList extends App {
-
-  import scala.concurrent.ExecutionContext.Implicits.global
-
-  val ListOfFuture = List(Future(1), Future(2), Future(3))
-  val futureOfList = Future.sequence(ListOfFuture)
-  println(futureOfList)
-}
-```
-
-![](image/README/ListOfFuture2FutureOfList.png)
-
-## 2022-02-10 BOA iw
-
-REST API, microservices, Big Data, ZIO
-
-3-yr contract
-
-15 ppl team (2 BA, 1 PM, 7 dev, some offshore devs); the whole team is quite large
 
 ## 2022-02-12 re-create sbt project
 
@@ -326,14 +62,6 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.11" % "test"
 ```
 
 Update sbt
-
-## 2022-02-13
-
-### Move files in IJ
-
-Be careful to move files in IJ
-
-Always use refactor to move, or you will break things.
 
 ### Scala: Any, AnyVal, AnyRef
 
@@ -549,14 +277,6 @@ Examples of impure functions
 
 - Date and time related methods like getDayOfWeek, getHour, and getMinute are all impure because their output depends on something other than their input parameters.
 
-## 2022-02-14 BOA iw 2nd
-
-The overall review is that your code is good! The end result (as discussed) is less important than the code quality.
-
-We'll ask you a bunch of questions pertaining to Scala, Java and your experiences on different projects and such. Taking the lead on the interview will be my lead developers (Sean and Leo) – and there will be a behavioral interview section as well.
-
-Failed!
-
 ## Scala: CATS
 
 ```dos
@@ -575,146 +295,11 @@ val res0: scala.collection.immutable.Map[Int,List[String]] = Map(1 -> List(a, c)
 
 ![](image/README/cats_01.png)
 
-## Misc
-
-### Self-cultivation
-
-## ? Questions to StackOverflow
-
-### Scala for-comprehension
-
-Why this line doesn't work?
-
-```scala
-    val riskResultNewList = tradingDataList.groupBy(_.ticker).map {
-      case (ticker, tradingList) =>
-        val risk = tradingList.flatMap { rec =>
-          for {
-            inOut <- (if (rec.action.toLowerCase == "buy") 1 else -1)            // this line has error!
-            share <- rec.numShares
-            price <- rec.tradePrice
-          } yield BigDecimal(share) * price //* (if (rec.action.toLowerCase == "buy") 1 else -1)
-        }.sum
-        (ticker, risk)
-    }.toList
-```
+## Questions to StackOverflow
 
 ### Does Python have fo-comprehension?
 
 ### Does JavaScript have fo-comprehension?
-
-## Questions to ask on Zhi's new class 2022-02-16
-
-- Why ZIO examples:
-  for { \_ <- ... }
-
-- What do ZIO projects look like?
-
-  - ZIO + Kafka?
-
-- What is the knowledge point for the Future List interview question?
-  - sequence
-
-## 2022-02-16 Zhi
-
-BOA iw q
-
-## 2022-02-17
-
-BOA iw q V2
-
-## 2022-02-18
-
-- BOA iw q V3
-
-- How to sum two Option[Int] in scala
-
-  - Solution 1: CATS / monoid
-
-```dos
-import cats.implicits._
-
-a |+| b
-```
-
-    - Solution 2: map and flatmap / for comprehension
-
-
-    - Soltion 3: reduceOption
-
-
-    - Not a good solution: function
-
-```dos
-def addOptionInt(a: Option[Int], b: Option[Int]): Option[Int] = {
-  (a, b) match {
-    case(None, None) => None
-    case(None, v@Some(_)) => v
-    case(v@Some(_), None) => v
-    case(Some(v1), Some(v2)) => Some(v1 + v2)
-  }
-}
-```
-
-    - Not a Soltion: getOrElse / orElse
-
-```
-a.getOrElse(0) + b.getOrElse(0)
-```
-
-    - Combination
-
-```
-import cats.implicits._
-
-def addOptionInt(a: Option[Int], b: Option[Int]): Option[Int] = {
-  (a, b) match {
-    case (None, None) => None
-    case (None, v@Some(_)) => v
-    case (v@Some(_), None) => v
-    case (Some(v1), Some(v2)) => Some(v1 + v2)
-  }
-}
-
-def output(a: Option[Int], b: Option[Int]): Unit = {
-  println(s"a: $a; b: $b")
-  //println(s"for (x <- a; y <- b) yield x + y = ${for (x <- a; y <- b) yield x + y}")
-  println(s"for (x <- a.orElse(Some(0)); y <- b.orElse(Some(0))) yield x + y = ${for (x <- a.orElse(Some(0)); y <- b.orElse(Some(0))) yield x + y}")
-  println(s"a.flatMap(x => b.map(x + _)) = ${a.flatMap(x => b.map(x + _))}")
-  println(s"(a ++ b).reduceOption(_ + _) = ${(a ++ b).reduceOption(_ + _)}")
-  println(s"a |+| b = ${a |+| b}")
-  println(s"addOptionInt(a,b) = ${addOptionInt(a, b)}")
-  //println(s"a.getOrElse(0) + b.getOrElse(0) = ${a.getOrElse(0) + b.getOrElse(0)}")
-}
-
-
-var a: Option[Int] = None
-var b: Option[Int] = None
-output(a, b)
-
-a = Some(1)
-output(a, b)
-
-b = Some(2)
-output(a, b)
-
-a = None
-output(a, b)
-```
-
-![](image/README/option_int_add_solutions_01.png)
-
-![](image/README/option_int_add_solutions_02.png)
-
-Looks like
-
-a |+| b
-
-and
-
-(a ++ b).reduceOption(_ + _)
-
-are best answers.
 
 ## 2022-02-19
 
@@ -1191,93 +776,6 @@ implicit def optionWriter[A](implicit writer: JsonWriter[A]): JsonWriter[Option[
 
 IntelliJ -> Help -> Show Logs in Explorer -> C:\Users\...\AppData\Local\JetBrains\IdeaIC2021.3\log\idea.log
 
-## Scala CV
-
-### Samples
-
-Good experience in writing Spark applications using Python and Scala.
-
-Used Scala sbt to develop Scala coded spark projects and executed using spark-submit
-
-Involved in developing a linear regression model to predict a continuous measurement for improving the observation on wind turbine data developed using spark with Scala API.
-
-Used Spark and Spark-SQL to read the parquet data and create the tables in hive using the Scala API.
-
-Implemented Spark using Scala and Spark SQL for faster testing and processing of data.
-
-Implemented Spark using Scala and utilizing Data frames and Spark SQL API for faster processing of data.
-
-Experienced in working with spark eco system using Spark SQL and Scala queries on different formats like Text file, CSV file.
-
-Expertized in implementing Spark using Scala and Spark SQL for faster testing and processing of data responsible to manage data from different sources.
-
-Proven experience in building in Data Driven applications using a combination of Java/Scala and the Spark framework
-
-Typesafe Reactive Platform (Scala, Akka, and Play)
-
-Scala.js
-
-Full Stack Scala with the Play Framework and Scala.js
-
-Udash is a Scala.js framework for building beautiful and maintainable web applications.
-
-Lift
-
-### Keywords
-
-Functional programming
-
-DSL
-
-- Akka
-- Finagle
-- Spark
-- Scalding
-- Play
-- Lift
-- Scalatra
-- Scalaz
-- Cats
-- ScalaTest
-- Specs2
-
-Lift is a free and open-source web framework that is designed for the Scala programming language.
-
-ZIO is a zero-dependency library for asynchronous and concurrent programming in Scala. It is a functional effect system in Scala. There are several functional effect systems in functional programming in the Scala community, such as ZIO, Cats Effect, and Monix.
-
-ZIO is a next-generation fabric for building async, concurrent, and distributed applications. ZIO is powered by fibers, and uses deep composition and static types to help developers rapidly build robust, reactive, powerful applications. The broader ZIO ecosystem includes modular components that rapid backend development, including solutions for GraphQL, RDBMS, NoSQL, big data, analytics, REST APIs, authentication, and much more.
-
-ZIO ecosystem:
-
-- ZIO
-- ZIO Streams
-- Caliban (GraphQL)
-- ZIO NIO
-- ZIO Keeper
-- ZIO Kafka
-
-Apache Spark is a comprehensive framework for executing distributed data transformations. Spark can be used to efficiently transfer and transform data between various locations, train machine learning models and perform inference, and more.
-
-Kafka Streams is a library for creating stateful stream processing applications over data stored in Kafka topics. As a library, it is lighter weight than other alternatives, being embeddable in existing applications and not requiring standalone cluster deployments.
-
-Chunk is a ZIOs immutable array-backed collection. Every time we are working with streams, we are always working with chunks. There are no streams with individual elements, these streams have always chunks in their underlying implementation.
-
-### Solution
-
-REST - play
-Web MVC - play, Akka
-UI - Scala.js
-Unit test - ScalaTest
-Lib - Scalaz, CATS
-Big Data - Spark (Spark Streaming, SparkQL, Spark Optimization, Spark performance tuning)
-Config format - HOCON
-Async / Reactive - Future, Promise
-Framework - ZIO, play, Akka (Akka Typed, Akka Streams, Akka HTTP, Akka Classic Persistence, Akka Classic Clustering, Akka Classic Serialization)
-
-### Stories
-
-???
-
 ## 2022-02-23
 
 ### ZIO
@@ -1321,34 +819,279 @@ Typeful, functional, streaming HTTP for Scala
 
 https://www.baeldung.com/scala/zio-intro
 
-## To be forked
-
-https://github.com/http4s/http4s
-
-https://github.com/cowtowncoder/java-uuid-generator
-
-https://github.com/wi101/zio-examples
-
-https://github.com/ghostdogpr/zio-cheatsheet
-
-## 2022-02-23 Zhi
-
-Kleisli
-
-Cats mapN
-
-Ctrl+Shift+T -> create a new test class or jump to it
-
-AnyFlatSpec
-
-Brian Xiang, Medium, ZIOStream
-
-python generator
-
-## 2022-02-25
-
-- Confirm Cognizant iw on Mar 3
-
-https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWIzMDYxOTYtMjA2MS00ZWVmLTk2OGMtZmQ0YzQ5ZjBmN2Rm%40thread.v2/0?context=%7b%22Tid%22%3a%22de08c407-19b9-427d-9fe8-edf254300ca7%22%2c%22Oid%22%3a%2254e7f6b8-689d-4c6c-8017-5890c6922ed1%22%7d
-
 ## 2022-02-26
+
+- ZIOStream
+
+  ZIO versions in sbt is very important!
+
+## 2022-02-27
+
+- FS2
+
+FS2 is a library for purely functional, effectful, and polymorphic stream processing library in the Scala programming language. Its design goals are compositionality, expressiveness, resource safety, and speed. The name is a modified acronym for Functional Streams for Scala (FSS, or FS2).
+
+FS2 is available for Scala 2.12, Scala 2.13, Scala 3, and Scala.js. FS2 is built upon two major functional libraries for Scala, Cats, and Cats-Effect. Regardless of those dependencies, FS2 core types (streams and pulls) are polymorphic in the effect type (as long as it is compatible with cats-effect typeclasses), and thus FS2 can be used with other effect libraries, such as Monix.
+
+- Check sbt version
+
+```
+sbt sbtVersion
+```
+
+```
+C:\Code\MyScala>sbt sbtVersion
+[info] welcome to sbt 1.5.8 (Oracle Corporation Java 11.0.12)
+[info] loading global plugins from C:\Users\x239757\.sbt\1.0\plugins
+[info] loading project definition from C:\Code\MyScala\project
+[info] set current project to myscala (in build file:/C:/Code/MyScala/)
+[info] 1.5.8
+```
+
+or
+
+```
+sbt about
+```
+
+```
+C:\Code\MyScala>sbt about
+[info] welcome to sbt 1.5.8 (Oracle Corporation Java 11.0.12)
+[info] loading global plugins from C:\Users\x239757\.sbt\1.0\plugins
+[info] loading project definition from C:\Code\MyScala\project
+[info] set current project to myscala (in build file:/C:/Code/MyScala/)
+[info] This is sbt 1.5.8
+[info] The current project is ProjectRef(uri("file:/C:/Code/MyScala/"), "myscala") 0.1.0-SNAPSHOT
+[info] The current project is built against Scala 2.12.14
+[info] Available Plugins
+[info]  - sbt.ScriptedPlugin
+[info]  - sbt.plugins.CorePlugin
+[info]  - sbt.plugins.Giter8TemplatePlugin
+[info]  - sbt.plugins.IvyPlugin
+[info]  - sbt.plugins.JUnitXmlReportPlugin
+[info]  - sbt.plugins.JvmPlugin
+[info]  - sbt.plugins.MiniDependencyTreePlugin
+[info]  - sbt.plugins.SbtPlugin
+[info]  - sbt.plugins.SemanticdbPlugin
+[info] sbt, sbt plugins, and build definitions are using Scala 2.12.14
+```
+
+- How to check Scala version
+
+```
+scala -version
+```
+
+```
+C:\Code\MyScala>scala -version
+Scala code runner version 2.13.7 -- Copyright 2002-2021, LAMP/EPFL and Lightbend, Inc.
+```
+
+- VSCode Metals extension
+
+https://scalameta.org/metals/
+
+- VSCode Metals extension has many code samples:
+
+i.e. ZIO HelloWorld
+
+```
+package zio.project.seed
+
+import java.io.IOException
+
+import zio.console._
+import zio.{ App, ExitCode, URIO, ZIO }
+
+object HelloWorld extends App {
+
+  override def run(args: List[String]): URIO[Console, ExitCode] =
+    myAppLogic.exitCode
+
+  val myAppLogic: ZIO[Console, IOException, Unit] =
+    for {
+      _    <- putStrLn("Hello! What is your name?")
+      name <- getStrLn
+      _    <- putStrLn(s"Hello, $name, welcome to ZIO!")
+    } yield ()
+}
+```
+
+Akka
+
+```
+//#full-example
+package com.example
+
+
+import akka.actor.typed.ActorRef
+import akka.actor.typed.ActorSystem
+import akka.actor.typed.Behavior
+import akka.actor.typed.scaladsl.Behaviors
+import com.example.GreeterMain.SayHello
+
+//#greeter-actor
+object Greeter {
+  final case class Greet(whom: String, replyTo: ActorRef[Greeted])
+  final case class Greeted(whom: String, from: ActorRef[Greet])
+
+  def apply(): Behavior[Greet] = Behaviors.receive { (context, message) =>
+    context.log.info("Hello {}!", message.whom)
+    //#greeter-send-messages
+    message.replyTo ! Greeted(message.whom, context.self)
+    //#greeter-send-messages
+    Behaviors.same
+  }
+}
+//#greeter-actor
+
+//#greeter-bot
+object GreeterBot {
+
+  def apply(max: Int): Behavior[Greeter.Greeted] = {
+    bot(0, max)
+  }
+
+  private def bot(greetingCounter: Int, max: Int): Behavior[Greeter.Greeted] =
+    Behaviors.receive { (context, message) =>
+      val n = greetingCounter + 1
+      context.log.info("Greeting {} for {}", n, message.whom)
+      if (n == max) {
+        Behaviors.stopped
+      } else {
+        message.from ! Greeter.Greet(message.whom, context.self)
+        bot(n, max)
+      }
+    }
+}
+//#greeter-bot
+
+//#greeter-main
+object GreeterMain {
+
+  final case class SayHello(name: String)
+
+  def apply(): Behavior[SayHello] =
+    Behaviors.setup { context =>
+      //#create-actors
+      val greeter = context.spawn(Greeter(), "greeter")
+      //#create-actors
+
+      Behaviors.receiveMessage { message =>
+        //#create-actors
+        val replyTo = context.spawn(GreeterBot(max = 3), message.name)
+        //#create-actors
+        greeter ! Greeter.Greet(message.name, replyTo)
+        Behaviors.same
+      }
+    }
+}
+//#greeter-main
+
+//#main-class
+object AkkaQuickstart extends App {
+  //#actor-system
+  val greeterMain: ActorSystem[GreeterMain.SayHello] = ActorSystem(GreeterMain(), "AkkaQuickStart")
+  //#actor-system
+
+  //#main-send-messages
+  greeterMain ! SayHello("Charles")
+  //#main-send-messages
+}
+//#main-class
+//#full-example
+```
+
+akka sbt
+
+```
+name := "akka-quickstart-scala"
+
+version := "1.0"
+
+scalaVersion := "2.13.1"
+
+lazy val akkaVersion = "2.6.18"
+
+// Run in a separate JVM, to make sure sbt waits until all threads have
+// finished before returning.
+// If you want to keep the application running while executing other
+// sbt tasks, consider https://github.com/spray/sbt-revolver/
+fork := true
+
+libraryDependencies ++= Seq(
+  "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
+  "ch.qos.logback" % "logback-classic" % "1.2.3",
+  "com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion % Test,
+  "org.scalatest" %% "scalatest" % "3.1.0" % Test
+)
+```
+
+Scalatest
+
+```
+object CubeCalculator extends App {
+  def cube(x: Int) = {
+    x * x * x
+  }
+}
+```
+
+```
+class CubeCalculatorTest extends org.scalatest.funsuite.AnyFunSuite {
+  test("CubeCalculator.cube") {
+    assert(CubeCalculator.cube(3) === 27)
+  }
+}
+```
+
+Scalatest sbt
+
+```
+lazy val root = (project in file(".")).
+  settings(
+    inThisBuild(List(
+      organization := "com.example",
+      scalaVersion := "2.13.6"
+    )),
+    name := "scalatest-example"
+  )
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9" % Test
+```
+
+- Gitpod
+
+https://www.gitpod.io/
+
+With Gitpod, you spin up fresh, automated dev environments for each task, in the cloud, in seconds.
+
+- Develop a new feature? Start a new workspace.
+- Review a pull request? Start a new workspace.
+- Fix a bug in production? Start a new workspace.
+
+https://scalameta-gitpodg8-fs2wfv9whm9.ws-us34.gitpod.io/
+
+![](image/README/gitpod_metals.png)
+
+Tried to Open workspace from GitPod to VSCode Desktop but failed:
+
+```
+[2/27/2022, 9:37:19 AM] open workspace window: vscode://gitpod.gitpod-desktop/workspace/gitpod-g8?%7B%22instanceId%22%3A%226e307514-280f-4181-9db0-19f72a0124a1%22%2C%22workspaceId%22%3A%22scalameta-gitpodg8-0ofi28oq54a%22%2C%22gitpodHost%22%3A%22https%3A%2F%2Fgitpod.io%22%7D
+[2/27/2022, 9:37:19 AM] acquiring lock: gitpod.io
+[2/27/2022, 9:37:19 AM] acquired lock: gitpod.io
+[2/27/2022, 9:37:19 AM] fetching the local app from https://gitpod.io/static/bin/gitpod-local-companion-windows.exe
+[2/27/2022, 9:37:20 AM] installing the local app to C:\Users\x239757\AppData\Local\Temp\gitpod-local-companion-3164-ontl4MraTZ5U-.exe
+[2/27/2022, 9:37:21 AM] installing the local app: {
+  "path": "C:\\Users\\x239757\\AppData\\Local\\Temp\\gitpod-local-companion-3164-ontl4MraTZ5U-.exe",
+  "etag": "\"r7tmgnae6f4\""
+}
+[2/27/2022, 9:37:22 AM] starting the local app with the config: {
+  "gitpodHost": "https://gitpod.io",
+  "configFile": "file:///c%3A/Users/x239757/AppData/Local/Temp/gitpod_ssh_config-3164-BDKCN6tP09sT",
+  "apiPort": 62798
+}
+[2/27/2022, 9:37:22 AM] failed to start the local app: Error: spawn EBUSY
+[2/27/2022, 9:37:22 AM] released lock: gitpod.io
+[2/27/2022, 9:37:22 AM] failed to open uri: Error: spawn EBUSY
+```

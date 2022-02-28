@@ -7,7 +7,6 @@ lazy val root = (project in file("."))
     name := "my-scala-worksheet"
   )
 
-libraryDependencies += "org.typelevel" %% "cats-core" % "2.3.0"
 
 //lazy val zioVersion = "1.0.13"
 //
@@ -20,3 +19,8 @@ libraryDependencies += "org.typelevel" %% "cats-core" % "2.3.0"
 
 libraryDependencies += "dev.zio" %% "zio" % "2.0.0-M4"
 libraryDependencies += "dev.zio" %% "zio-streams" % "2.0.0-M4"
+
+libraryDependencies += "org.typelevel" %% "cats-core" % "2.3.0"
+libraryDependencies += "org.typelevel" %% "cats-effect" % "2.5.3"
+
+libraryDependencies += "co.fs2" %% "fs2-core" % "2.5.10"
