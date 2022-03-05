@@ -9,4 +9,4 @@ val b = Stream("George", "Paul")
 
 (a ++ b).compile.toVector
 (a ++ b).compile.toList
-(a ++ b).compile.count
+//(a ++ b).compile.count

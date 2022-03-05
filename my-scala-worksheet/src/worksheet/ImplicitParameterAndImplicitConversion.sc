@@ -6,10 +6,10 @@ multiply(4)(10) // 40
 //multiply(3)
 // error: could not find implicit value for parameter factor: Int
 
-implicit val z: Int = 10
+implicit val z: Int = 11
 
-multiply(3) // 30
-multiply(4) // 40
+multiply(3) // 33
+multiply(4) // 44
 
 //implicit val z2: Int = 11
 
