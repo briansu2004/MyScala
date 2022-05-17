@@ -1095,3 +1095,27 @@ Tried to Open workspace from GitPod to VSCode Desktop but failed:
 [2/27/2022, 9:37:22 AM] released lock: gitpod.io
 [2/27/2022, 9:37:22 AM] failed to open uri: Error: spawn EBUSY
 ```
+
+## 2022-05-17
+
+Because of Oracle Java license issues, we need to replace with OpenJDK.
+
+Looks like Scala 2/3 can work with OpenJDK 18.
+
+Here are some tricks:
+
+SDK
+
+![](image/README/sdk.png)
+
+Project SDK setting
+
+![](image/README/Project_SDK_setting.png)
+
+"project reload" checkbox in "sbt settings..."
+
+![](image/README/project_reload.png)
+
+Run/Debug configurations
+
+![](image/README/run_config.png)
