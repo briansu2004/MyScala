@@ -1096,7 +1096,7 @@ Tried to Open workspace from GitPod to VSCode Desktop but failed:
 [2/27/2022, 9:37:22 AM] failed to open uri: Error: spawn EBUSY
 ```
 
-## 2022-05-17
+## 2022-05-16
 
 Because of Oracle Java license issues, we need to replace with OpenJDK.
 
@@ -1119,3 +1119,22 @@ Project SDK setting
 Run/Debug configurations
 
 ![](image/README/run_config.png)
+
+Remove <user_home>/.sbt folder to let it rebuild!
+
+## 2022-05-17
+
+Looks like it still has issues on creating a new Scala sbt project with OpenJDK 18.
+
+Switch to Java 18 and no issues.
+
+### Trick - PrintWriter
+
+```scala
+val printWriter = new PrintWriter(System.out);
+```
+
+### Trick - "Redirect input from"
+
+![](image/README/redirect_input_from.png)
+
