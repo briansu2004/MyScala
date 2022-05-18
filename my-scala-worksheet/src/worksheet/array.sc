@@ -1,3 +1,15 @@
+val arr = Array(1,2,3,4)
+val arr2 = arr.clone()
+arr2
+arr(0) = 5
+arr
+arr2
+arr2(3) = 6
+arr
+arr2
+
+
+
 var myList = Array(1.9, 2.9, 3.4, 3.5)
 
 // Print all the array elements

@@ -1,9 +1,25 @@
-val a : BigDecimal = BigDecimal("154476802108746166441951315019919837485664325669565431700026634898253202035277999")
-val b : BigDecimal = BigDecimal("36875131794129999827197811565225474825492979968971970996283137471637224634055579")
-val c : BigDecimal = BigDecimal("4373612677928697257861252602371390152816537558161613618621437993378423467772036")
-println(s"a/(b+c) + b/(a+c) + c/(a+b) is: ${a/(b+c) + b/(a+c) + c/(a+b)}")
+val lastAnswer = 10 % 3
+val lastAnswer = 10 % 1
 
-val a : BigInt = BigInt("154476802108746166441951315019919837485664325669565431700026634898253202035277999")
-val b : BigInt = BigInt("36875131794129999827197811565225474825492979968971970996283137471637224634055579")
-val c : BigInt = BigInt("4373612677928697257861252602371390152816537558161613618621437993378423467772036")
-println(s"a/(b+c) + b/(a+c) + c/(a+b) is: ${a/(b+c) + b/(a+c) + c/(a+b)}")
+1^7
+
+// java.lang.ArithmeticException: / by zero
+//val lastAnswer = 10 % 0
+
+val arr = Array()
+arr.size
+arr.length
+arr == null
+arr.isEmpty
+
+val arr = Array("2", "3")
+arr.size
+arr.length
+arr == null
+arr.isEmpty
+
+var outList: List[Int] = List()
+outList
+var lastAnswer = 0
+outList = lastAnswer :: outList
+outList
