@@ -1,3 +1,26 @@
+val chars = Array.fill(6){'#'}
+chars.foreach(x => println(x))
+
+
+var sc: Array[Char] = Array.ofDim[Char](256)
+sc.foreach(x => println(x))
+
+
+
+var sc: Array[Char] = Array[Char]('#')
+sc.foreach(x => println(x))
+
+
+val chars = Array[Char](256)
+chars.foreach(x => println(x))
+
+List(3,7,5,2).sorted
+
+List(3,7,5,2).sortWith(_ < _)
+
+val arr: Array[Int] = new Array[Int](10)
+arr
+
 val arr = Array(1,2,3,4)
 val arr2 = arr.clone()
 arr2
