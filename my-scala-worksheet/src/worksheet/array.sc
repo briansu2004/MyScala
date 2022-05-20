@@ -1,3 +1,11 @@
+val a = Array.ofDim[String](5, 4)
+a.foreach(x => x.foreach(y => println(y)))
+
+val a = Array.ofDim[Int](5,4)
+a.foreach(x => x.foreach(y => println(y)))
+a.length
+a(0).length
+
 val chars = Array.fill(6){'#'}
 chars.foreach(x => println(x))
 

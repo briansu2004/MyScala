@@ -1,3 +1,14 @@
+val temp: List[Int] = List()
+temp = temp :: 4 :: Nil
+
+
+List(1,2,3) :+ 4
+
+val temp = List()
+temp :+ 4
+List(4) :+ 3
+List(temp :+ 4) :+ 3
+
 // List of Strings
 val fruit: List[String] = List("apples", "oranges", "pears")
 
