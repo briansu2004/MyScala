@@ -1,6 +1,8 @@
-val temp: List[Int] = List()
-temp = temp :: 4 :: Nil
+//val temp: List[Int] = List()
+//temp :: 4 :: Nil
 
+val temp = List()
+temp :: 4 :: Nil
 
 List(1,2,3) :+ 4
 
