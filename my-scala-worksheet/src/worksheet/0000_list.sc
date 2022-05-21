@@ -99,8 +99,9 @@ m1.lastIndexOf(-6)
 m1.lastIndexOf(-6, 6)
 
 /* dropWhile */
-
+val m1 = scala.collection.immutable.List(4, 38, 5, -3, 0, 7, -6, -6, 4, 38)
 m1.dropWhile(x => {x < 0})
+m1.filter(x => {x >= 0})
 m1.dropWhile(x=>{x % 2 != 0})
 
 val m = List(1, 3, 5, 4, 2, 8, 9, 7, 10)
