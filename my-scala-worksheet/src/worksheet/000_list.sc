@@ -64,6 +64,7 @@ Displays all elements of the list in a string. */
 fruit.mkString(",")
 fruit.min
 fruit.max
+fruit.size
 fruit.length
 fruit.startsWith("o")
 fruit.indexOf("oranges")
