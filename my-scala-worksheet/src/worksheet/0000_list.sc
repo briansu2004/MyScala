@@ -98,23 +98,22 @@ m1.init
 m1.lastIndexOf(-6)
 m1.lastIndexOf(-6, 6)
 
-/* dropWhile */
+/* dropWhile
+it doesn't work like filter
+it stops when it finds the first unsatisfied element! */
 val m1 = scala.collection.immutable.List(4, 38, 5, -3, 0, 7, -6, -6, 4, 38)
 m1.dropWhile(x => {x < 0})
 m1.filter(x => {x >= 0})
 m1.dropWhile(x=>{x % 2 != 0})
-
 val m = List(1, 3, 5, 4, 2, 8, 9, 7, 10)
 m.dropWhile(x=>{x % 2 != 0})
 m.dropWhile(x=>{x < 5})
 m.dropWhile(x=>{x > 0})
-
 val myList = List(4, 38, 5, -3, 0, 7, -6, -6, 4, 38)
 myList.dropWhile(x => {x < 6})
 val myList1 = List(4, 38, 5, 4, 38)
 myList1.dropWhile(x => {x < 6})
 myList1.dropWhile(x => {x - 6 < 0})
-
 val lst = List(4, 38, 5, 7, 9)
 lst.dropWhile(x => {x < 6})
 lst.dropWhile(x => {x % 2 != 0})
