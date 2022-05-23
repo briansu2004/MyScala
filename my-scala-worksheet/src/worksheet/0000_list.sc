@@ -11,6 +11,11 @@ val dim: List[List[Int]] =
     List(0, 1, 0),
     List(0, 0, 1)
   )
+var dna: List[List[Any]] = List()
+
+/* length and size are the same, but use length */
+fruit.length
+fruit.size
 
 /* :: Nil */
 // List of Strings
@@ -117,3 +122,21 @@ myList1.dropWhile(x => {x - 6 < 0})
 val lst = List(4, 38, 5, 7, 9)
 lst.dropWhile(x => {x < 6})
 lst.dropWhile(x => {x % 2 != 0})
+
+/* toArray */
+fruit
+fruit.toArray
+
+val dna: List[List[String]] = List(List("1", "5", "caaab"), List("0", "4", "xyz"), List("2", "4", "bcdybc"))
+dna.toArray // Array(List(1, 5, caaab), List(0, 4, xyz), List(2, 4, bcdybc))
+dna.map(_.toArray).toArray // Array(Array(1, 5, caaab), Array(0, 4, xyz), Array(2, 4, bcdybc))
+
+List("1", "5", "caaab") ::: List("0", "4", "xyz") // List(1, 5, caaab, 0, 4, xyz)
+List(List("1", "5", "caaab")) ::: List(List("0", "4", "xyz")) // List(List(1, 5, caaab), List(0, 4, xyz))
+
+/* mkString 2D array/List */
+println(s"dna: ${dna.map(_.mkString(" ")).mkString("\n")}")
+dna.map(_.mkString(" ")).mkString("\n")
+
+
+

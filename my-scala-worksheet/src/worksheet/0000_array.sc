@@ -1,8 +1,20 @@
+val genes: Array[String] = Array[String]("a", "b", "c", "aa", "d", "b")
+val first: Int = 1
+val last : Int = 6
+val validGenes:  Array[String] = genes.slice(first, last)
+
 val weights: Array[Int] = Array[Int](1, 3, 6)
 val i = 0
 val j = 2
 weights.slice(i, j)
 weights.slice(i, j + 1)
+
+/* length and size are the same, but use length */
+weights.length
+weights.size
+
+/* init an empty array */
+val dna: Array[Array[Any]] = Array()
 
 var z:Array[String] = new Array[String](3)
 var z = new Array[String](3)
