@@ -1,5 +1,7 @@
+import scala.collection.mutable.ListBuffer
+
 // List of Strings
-val fruit: List[String] = List("apples", "oranges", "pears")
+var fruit: List[String] = List("apples", "oranges", "pears")
 // List of Integers
 val nums: List[Int] = List(1, 2, 3, 4)
 // Empty List.
@@ -12,6 +14,12 @@ val dim: List[List[Int]] =
     List(0, 0, 1)
   )
 var dna: List[List[Any]] = List()
+
+/* add a new element to a list */
+var fruits = new ListBuffer[String]()
+fruits += "pipeapple"
+fruits += "blueberry"
+val fruitsList = fruits.toList
 
 /* length and size are the same, but use length */
 fruit.length
