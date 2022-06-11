@@ -1,5 +1,5 @@
 val s = "abbabb"
-for (i <-  1 to s.length - 1) {
+for (i <-  1 until s.length) {
   val ns = s.slice(i, s.length)
   println(ns)
 }
