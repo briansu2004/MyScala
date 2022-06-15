@@ -1,3 +1,19 @@
+import scala.collection.mutable.Map
+
+val s = "aeiouuoiea"
+val myMap: Map[Char, Int] = Map()
+for (i <- 0 until s.length) {
+  if (myMap.contains(s.charAt(i))) {
+    myMap(s.charAt(i)) = myMap(s.charAt(i)) + 1
+  } else {
+    myMap(s.charAt(i)) = 1
+  }
+}
+myMap.keys
+myMap.keys.toList
+myMap.keys.toList.sorted
+myMap.keys.mkString("")
+
 import scala.collection.MapView
 
 /* create an empty map */

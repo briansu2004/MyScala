@@ -25,12 +25,14 @@ var myList = Array(1.9, 2.9, 3.4, 3.5)
 for ( x <- myList ) {
   println( x )
 }
+myList.map{println}
 
 var total = 0.0;
 for ( i <- 0 to (myList.length - 1)) {
   total += myList(i);
 }
 println("Total is " + total);
+myList.foldLeft(0.0)(_ + _)
 
 // Finding the largest element
 var max = myList(0);
@@ -68,3 +70,12 @@ Array.fill(3)()
 Array.fill(5)(1)
 Array.fill(4,3)("")
 val arr = Array.fill[Byte](5)(0)
+
+
+/* -1 */
+val s = "decrease"
+for (i <- s.length - 1 to 0 by -1) {
+  println(s(i))
+}
+s(0)
+s(1)

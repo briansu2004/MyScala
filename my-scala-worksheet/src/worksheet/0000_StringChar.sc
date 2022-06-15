@@ -21,3 +21,15 @@ dna.charAt(0)
 val a = "ABC"
 val b = "ADEF"
 a < b
+
+
+"c".concat("d")
+
+var s1 = "tobe"
+val s2 = "addme"
+s1.concat(s2)
+
+val s = "abcdefg"
+for (i <- 0 until s.length) {
+  print(s.charAt(i) - 'a')
+}
