@@ -35,5 +35,13 @@ map2.map {
   }
 }
 
-val m1 = Map(1 -> "a", 2 -> "b")
-val m2 = Map(2 -> "c", 3 -> "d")
+val m1 = Map("a" -> 1, "b" -> 2)
+val m2 = Map("b" -> 3, "d" -> 4)
+
+// Map(b -> 5, d -> 4)
+m2.map {
+  case (k, v) => m1.get(k) match {
+    case None => k -> v
+    case Some(x) => k -> (v + x)
+  }
+}

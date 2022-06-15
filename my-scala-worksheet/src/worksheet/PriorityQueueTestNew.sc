@@ -1,8 +1,5 @@
 import scala.collection.mutable
 
-val pQueue = (new PriorityQueueTest())
-val queue = pQueue.queue
-
 class PriorityQueueTest {
   implicit val ord: Ordering[(Any, Int)] = Ordering.by(_._2)
 
@@ -15,6 +12,9 @@ class PriorityQueueTest {
     res
   }
 }
+
+val pQueue = (new PriorityQueueTest())
+val queue = pQueue.queue
 
 queue.enqueue(("a", 3))
 queue.enqueue(("b", 3))

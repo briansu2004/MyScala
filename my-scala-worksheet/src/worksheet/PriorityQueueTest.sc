@@ -4,7 +4,6 @@ class PriorityQueueTest{
   implicit val ord: Ordering[(Any,Int)] = Ordering.by(_._2)
 
   var queue = mutable.PriorityQueue[(Any,Int)]()
-
 }
 
 val pQueue = (new PriorityQueueTest())
