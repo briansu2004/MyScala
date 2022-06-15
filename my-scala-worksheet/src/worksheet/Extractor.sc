@@ -1,8 +1,8 @@
 object Demo {
   def main(args: Array[String]) {
-    println ("Apply method : " + apply("Zara", "gmail.com"));
-    println ("Unapply method : " + unapply("Zara@gmail.com"));
-    println ("Unapply method : " + unapply("Zara Ali"));
+    println ("Apply method : " + apply("BrianSu2004", "hotmail.com"));
+    println ("Unapply method : " + unapply("briansu2004@hotmail.com"));
+    println ("Unapply method : " + unapply("Brian Su"));
   }
 
   // The injection method (optional)
@@ -29,15 +29,13 @@ object Demo {
     println(x)
 
     x match {
-      case Demo(num) => println(x+" is bigger two times than "+num)
+      case Demo(num) => println(x+" is bigger than "+num)
 
       //unapply is invoked
-      case _ => println("i cannot calculate")
+      case _ => println("I cannot calculate")
     }
   }
   def apply(x: Int) = x*2
   def unapply(z: Int): Option[Int] = if (z%2==0) Some(z/2) else None
 }
 Demo.main(Array(""))
-
-
