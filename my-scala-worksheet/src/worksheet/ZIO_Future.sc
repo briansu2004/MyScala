@@ -1,6 +1,3 @@
-
-
-
 import zio.{Task, ZIO}
 
 import scala.concurrent.Future
@@ -11,4 +8,3 @@ val zfuture: Task[String] =
   ZIO.fromFuture { implicit ec =>
     future.map(_ => "Goodbye!")
   }
-
