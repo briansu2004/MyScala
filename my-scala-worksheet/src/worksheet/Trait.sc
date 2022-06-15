@@ -1,3 +1,7 @@
+// Traits support multiple inheritance.
+// In Scala, a class can inherit both normal classes or abstract class and traits
+// by using extends keyword before the class name
+// and with keyword before the trait's name.
 trait Equal {
   def isEqual(x: Any): Boolean
   def isNotEqual(x: Any): Boolean = !isEqual(x)
@@ -35,6 +39,3 @@ object Demo1 {
   }
 }
 Demo1.main(Array(""))
-
-
-

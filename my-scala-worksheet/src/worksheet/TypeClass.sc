@@ -1,3 +1,17 @@
+/*
+A type class is a group of types that satisfy a contract typically defined by a trait.
+
+They were first introduced in Haskell to achieve ad-hoc polymorphism.
+They don’t have native support in Scala,
+but we can use built-in features like traits and implicit classes to achieve them.
+
+A type class is a type system construct that supports ad hoc polymorphism.
+This is achieved by adding constraints to type variables in parametrically polymorphic types.
+Such a constraint typically involves a type class T and a type variable a,
+and means that a can only be instantiated to a type
+whose members support the overloaded operations associated with T
+ */
+
 final case class Person1(firstName: String, lastName: String)
 
 object PersonCanChat1 {
@@ -38,14 +52,14 @@ object ChatUtil {
   }
 }
 
-ChatUtilOld.chat(Dog("Meg"), DogCanChat)
-ChatUtilOld.chat(Person("John", "Smith"), PersonCanChat)
+ChatUtil.chat(Dog("Meg"), DogCanChat)
+ChatUtil.chat(Person("John", "Smith"), PersonCanChat)
 
 object PersonCanChatFormally extends CanChat[Person] {
   def chat(x: Person) = s"Hello, I am ${x.firstName} ${x.lastName}"
 }
 
-ChatUtilOld.chat(Person("John", "Smith"), PersonCanChatFormally)
+ChatUtil.chat(Person("John", "Smith"), PersonCanChatFormally)
 
 
 
