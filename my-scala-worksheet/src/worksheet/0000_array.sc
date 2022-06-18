@@ -3,6 +3,11 @@ val first: Int = 1
 val last : Int = 6
 val validGenes:  Array[String] = genes.slice(first, last)
 
+val mid = (genes.length - genes.length % 2 ) / 2
+val leftArr: Array[String] = genes.slice(0, mid)
+val rightArr: Array[String] = genes.slice(mid, genes.length)
+
+
 val weights: Array[Int] = Array[Int](1, 3, 6)
 val i = 0
 val j = 2
