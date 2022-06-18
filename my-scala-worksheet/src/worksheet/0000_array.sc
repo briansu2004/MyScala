@@ -1,3 +1,20 @@
+var myArr = Array(64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060)
+myArr.sortBy(_.toInt)
+myArr.sortBy(BigInt(_))
+myArr.sorted
+myArr
+
+myArr.sum
+myArr.sum / myArr.length
+BigDecimal(myArr.sum / myArr.length)
+BigDecimal(myArr.sum) / myArr.length
+
+myArr.max
+var modeArr: Array[BigInt] = Array.fill(myArr.max + 1)(0)
+for (i <- myArr.indices) {
+  modeArr(myArr(i)) = modeArr(myArr(i)) + 1
+}
+
 val genes: Array[String] = Array[String]("a", "b", "c", "aa", "d", "b")
 val first: Int = 1
 val last : Int = 6
@@ -84,3 +101,6 @@ for (i <- s.length - 1 to 0 by -1) {
 }
 s(0)
 s(1)
+
+
+
