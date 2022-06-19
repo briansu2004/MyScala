@@ -1,3 +1,9 @@
+import scala.math._
+
+3.7.ceil.toInt
+ceil(1.2)
+floor(3.7)
+
 (5.4).floor
 
 (9 / 2).floor
