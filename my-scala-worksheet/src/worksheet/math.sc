@@ -1,5 +1,12 @@
 import scala.math._
 
+3.round
+(1.2).round
+(1.35).round
+(3.5).round
+(-3.5).round
+(-1.7).round
+
 3.7.ceil.toInt
 ceil(1.2)
 floor(3.7)
