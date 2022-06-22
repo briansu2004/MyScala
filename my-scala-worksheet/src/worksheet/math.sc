@@ -1,5 +1,11 @@
 import scala.math._
 
+val boy = 1.09
+val girl = 1
+val chance = scala.math.pow(boy / (boy + girl), 3)
+println(f"$chance%.3f")
+// 0.696
+
 3.round
 (1.2).round
 (1.35).round
