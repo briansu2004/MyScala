@@ -41,4 +41,4 @@ arr.length
 math.abs(-2)
 
 val n = 2
-(1 to 10).map(println(s"$n x _ = ${n * _}"))
+(1 to 10).foreach(i => println(s"$n x $i = ${n * i}"))
