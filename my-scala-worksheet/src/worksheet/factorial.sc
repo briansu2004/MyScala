@@ -1,18 +1,10 @@
-val fa: LazyList[Int] = {
+val factorial: LazyList[Int] = {
   def f: LazyList[Int] = {
     1.toInt #:: f.zipWithIndex.map { n => n._1 * (n._2 + 2) }
   }
   1 #:: f
 }
-fa(0)
-fa(1)
-fa(2)
-fa(3)
-fa(4)
-fa(5)
-fa(6)
-fa(7)
-fa(8)
+(0 to 10).foreach(x => println(factorial(x)))
 
 //
 //// 1 2 6 24 120 720 5040 40320
