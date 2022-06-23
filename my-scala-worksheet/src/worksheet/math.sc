@@ -40,3 +40,5 @@ arr.length
 
 math.abs(-2)
 
+val n = 2
+(1 to 10).map(println(s"$n x _ = ${n * _}"))

@@ -1,3 +1,12 @@
+/*
+Scala Lists are quite similar to arrays which means,
+all the elements of a list have the same type but there are two important differences.
+First, lists are immutable, which means elements of a list cannot be changed by assignment.
+Second, lists represent a linked list whereas arrays are flat.
+
+should be easy to add a new element
+ */
+
 import scala.collection.mutable.ListBuffer
 
 // List of Strings

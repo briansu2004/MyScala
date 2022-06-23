@@ -8,3 +8,5 @@ val fib: LazyList[BigInt] = {
   fs(0, 1)
 }
 fib(10)
+
+(100000 to 100010).foreach(n => println(s"The Fibonacci number of $n is: ${fib(n)}"))
