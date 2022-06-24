@@ -63,18 +63,22 @@ for ( i <- 1 to (myList.length - 1) ) {
 }
 println("Max is " + max);
 
-var myMatrix = Array.ofDim[Int](3,3)
+
+/* 2D */
+// Multidimensional Array by using Array of Array
+// Array[Array[Int]]
+var myMatrix = Array.ofDim[Int](3,5)
 
 // build a matrix
 for (i <- 0 to 2) {
-  for ( j <- 0 to 2) {
+  for ( j <- 0 to 4) {
     myMatrix(i)(j) = j;
   }
 }
 
 // Print two dimensional array
 for (i <- 0 to 2) {
-  for ( j <- 0 to 2) {
+  for ( j <- 0 to 4) {
     print(" " + myMatrix(i)(j));
   }
   println();
