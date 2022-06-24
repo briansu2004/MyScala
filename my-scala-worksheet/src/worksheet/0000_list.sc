@@ -5,6 +5,7 @@ First, lists are immutable, which means elements of a list cannot be changed by 
 Second, lists represent a linked list whereas arrays are flat.
 
 should be easy to add a new element
+But mutable Queue is even better (however, queue is implemented with the linked list)
  */
 
 import scala.collection.mutable.ListBuffer
