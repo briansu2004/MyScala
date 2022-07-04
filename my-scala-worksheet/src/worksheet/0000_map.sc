@@ -23,7 +23,7 @@ val emptyMap: Map[Int, String] = Map[Int, String]()
 /* create a non-empty map */
 val map: Map[Int, String] = Map(1 -> "first", 2 -> "second")
 val map: Map[Int, String] = Map.apply(1 -> "first", 2 -> "second")
-val map: Map[Int, String] = List(1 -> "first", 2 -> "second").toMap
+//val map: Map[Int, String] = List(1 -> "first", 2 -> "second").toMap
 
 List(1 -> "first", 2 -> "second")
   .foldLeft(Map.empty[Int, String]) {
@@ -80,6 +80,9 @@ names2.remove("Soomeone")
 //names2.find("Effie")
 //names2.put("Brian" -> 10)
 //names2.count((k, v) => v < 3)
+names2.addOne("East" -> 5)
+names2
+names1 // update cloned map doesn't affect the original map
 val names3 = names2.empty
 
 /* to add or update a key/value pair in the map, use + */

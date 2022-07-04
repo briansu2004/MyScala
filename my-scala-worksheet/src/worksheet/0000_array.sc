@@ -1,3 +1,10 @@
+/* clone array */
+var nums1: Array[Int] = Array[Int](73, 67, 40, 33)
+var nums2 = nums1.clone()
+nums2(0) = 75
+nums2
+nums1 // update cloned map doesn't affect the original map
+
 var myArr = Array(64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060)
 myArr.sortBy(_.toInt)
 myArr.sortBy(BigInt(_))

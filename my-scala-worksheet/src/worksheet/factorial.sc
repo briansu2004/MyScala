@@ -1,3 +1,4 @@
+/* Not good as zipWithIndex only takes Int not BigInt */
 val factorial: LazyList[Int] = {
   def f: LazyList[Int] = {
     1.toInt #:: f.zipWithIndex.map { n => n._1 * (n._2 + 2) }
