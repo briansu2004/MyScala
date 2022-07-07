@@ -10,6 +10,13 @@ But mutable Queue is even better (however, queue is implemented with the linked 
 
 import scala.collection.mutable.ListBuffer
 
+List("1", "5", "caaab")(0) // 1
+List("1", "5", "caaab")(2) // caaab
+// List("1", "5", "caaab")(3) // java.lang.IndexOutOfBoundsException
+List("1", "5", "caaab").tail // List(5, caaab)
+List("1", "5", "caaab").tails // <iterator>
+List("1", "5", "caaab").head // 1
+
 // List of Strings
 var fruit: List[String] = List("apples", "oranges", "pears")
 // List of Integers

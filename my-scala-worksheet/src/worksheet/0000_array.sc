@@ -1,3 +1,22 @@
+//List(1,2,3).permutations
+
+Array("a", "b", "c").permutations
+
+val it = Array("a", "b", "c").permutations
+
+//it.next().getClass
+
+while (it.hasNext){
+  println(it.next().mkString(" "))
+}
+
+val xs = Array("a", "b", "c", "c", "a", "b", "c", "b", "b", "a")
+//xs.groupBy(identity).mapValues(_.length).mkString(" ")
+xs.groupBy(identity).view.mapValues(_.length).mkString(" ")
+xs.groupBy(identity).view.mapValues(_.length).size
+
+var cnt: Array[Int] = Array.fill[Int](5)(0)
+
 /* clone array */
 var nums1: Array[Int] = Array[Int](73, 67, 40, 33)
 var nums2 = nums1.clone()
