@@ -1,3 +1,17 @@
+Array(1,2,3,2,1).indexOf(2)
+
+Array(4, 3, 5, 1, 2).indexOf(1)
+Array(4, 3, 5, 1, 2).indexOf(2)
+Array(4, 3, 5, 1, 2).indexOf(3)
+Array(4, 3, 5, 1, 2).indexOf(4)
+Array(4, 3, 5, 1, 2).indexOf(5)
+
+Array(1, 2, 3, 4, 5, 6).take(2)
+Array(1, 2, 3, 4, 5, 6).take(6-2)
+Array(1, 2, 3, 4, 5, 6).takeRight(2)
+
+Array(1, 2, 3, 4, 5, 6).takeRight(2).concat( Array(1, 2, 3, 4, 5, 6).take(4))
+
 //List(1,2,3).permutations
 
 Array("a", "b", "c").permutations

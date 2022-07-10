@@ -8,6 +8,15 @@ should be easy to add a new element
 But mutable Queue is even better (however, queue is implemented with the linked list)
  */
 
+
+
+List(1,2,3,2,1).indexOf(2)
+List(1,2,3,2,1).indexOf(5)
+List(1,2,3,2,1).lastIndexOf(2)
+List(1,2,3,4,5,6).indexWhere(element => element > 3)
+List(1,2,3,4,5,6).lastIndexWhere(element => element > 3)
+List(1,2,3,2,1).zipWithIndex.filter(pair => pair._1 == 2).map(pair => pair._2)
+
 import scala.collection.mutable.ListBuffer
 
 List("1", "5", "caaab")(0) // 1
