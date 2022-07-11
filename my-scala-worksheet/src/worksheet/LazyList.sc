@@ -1,5 +1,22 @@
+/* Square Number */
+println("-" * 50)
+println("Square Number")
+val squares: LazyList[Long] = {
+  def f: LazyList[Long] = {
+    1 #:: f.zipWithIndex.map {
+      n => (n._2 + 2).toLong * (n._2 + 2).toLong
+    }
+  }
+  f
+}
+(0 to 10).foreach(x => println(squares(x)))
+squares.filter(n => n >= 3 && n <= 9)
+//squares.filter(n => n >= 3 && n <= 9).length //java.lang.StackOverflowError
+//squares.filter(n => n >= 3 && n <= 9).size //java.lang.StackOverflowError
+
+
 /* Utopian Tree */
-println('-' * 50)
+println("-" * 50)
 println("Utopian Tree")
 val utopianTree: LazyList[Int] = {
   def f: LazyList[Int] = {
@@ -13,7 +30,7 @@ val utopianTree: LazyList[Int] = {
 
 
 /* Factorial */
-println('-' * 50)
+println("-" * 50)
 println("Factroial")
 val factorial: LazyList[Int] = {
   def f: LazyList[Int] = {
