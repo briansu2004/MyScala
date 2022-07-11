@@ -32,6 +32,7 @@ val utopianTree: LazyList[Int] = {
 /* Factorial */
 println("-" * 50)
 println("Factroial")
+// Int
 val factorial: LazyList[Int] = {
   def f: LazyList[Int] = {
     1.toInt #:: f.zipWithIndex.map { n => n._1 * (n._2 + 2) }
@@ -40,6 +41,18 @@ val factorial: LazyList[Int] = {
   1 #:: f
 }
 (0 to 10).foreach(x => println(factorial(x)))
+// BigInt
+val factorialBigInt: LazyList[BigInt] = {
+  def f: LazyList[BigInt] = {
+    BigInt(1) #:: f.zipWithIndex.map { n => n._1 * (n._2 + 2) }
+  }
+
+  1 #:: f
+}
+(0 to 25).foreach(x => println(factorialBigInt(x)))
+
+// List can't have a lot of elements so the index can't be BigInt that large
+// It is designed to be Int (handeled by Int)
 
 //
 //// 1 2 6 24 120 720 5040 40320
