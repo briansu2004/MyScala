@@ -1,3 +1,11 @@
+val n = 1230456
+n.toString.toCharArray
+n.toString.toCharArray.filter(x => x.asDigit > 0 && n % x.asDigit == 0)
+n.toString.toCharArray.filter(x => x.asDigit > 0 && n % x.asDigit == 0).length
+
+  //.filter(x => x.asDigit > 0 && n % x.asDigit == 0).count
+
+
 val s = "07:05:45PM"
 s.slice(0, 2)
 s.slice(0, 2).toInt
