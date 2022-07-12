@@ -1,3 +1,10 @@
+val s = "10111"
+s(0)
+s(0).toInt
+s(0).asDigit
+s(1).asDigit
+s(0).asDigit | s(1).asDigit
+
 /* slice vs substring */
 var dna = "abcdefghijk"
 dna.substring(0, 0)
