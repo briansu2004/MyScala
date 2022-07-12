@@ -1,3 +1,11 @@
+val a = Array(12, 5, 7)
+a.map(x => if (x > 0) {
+  "Positive"
+} else {
+  "Not Positive"
+}).mkString("\n")
+
+
 Array(1,2,3,2,1).indexOf(2)
 
 Array(4, 3, 5, 1, 2).indexOf(1)
