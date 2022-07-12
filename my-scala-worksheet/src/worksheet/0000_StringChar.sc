@@ -1,3 +1,13 @@
+/* slice vs substring */
+var dna = "abcdefghijk"
+dna.substring(0, 0)
+dna.substring(0, 1)
+dna.slice(0, 0)
+dna.slice(0, 1)
+dna.slice(2, 8)
+dna.substring(2, 8)
+dna.substring(1, dna.length)
+
 val s = "abbabb"
 for (i <-  1 until s.length) {
   val ns = s.slice(i, s.length)
@@ -5,10 +15,6 @@ for (i <-  1 until s.length) {
 }
 
 
-var dna = "abcdefghijk"
-dna.slice(2, 8)
-dna.substring(2, 8)
-dna.substring(1, dna.length)
 
 dna += "a"
 dna
