@@ -1,3 +1,9 @@
+val lst = List(4, 38, 5, -3, 0, 7, -6, -6, 4, 38)
+val r1 = lst.dropWhile(x => x > 0) // List(-3, 0, 7, -6, -6, 4, 38)
+val r2 = lst.dropWhile(x => x < 0) // List(4, 38, 5, -3, 0, 7, -6, -6, 4, 38)
+val r3 = lst.takeWhile(x => x > 0) // List(4, 38, 5)
+
+
 /*
 Scala Lists are quite similar to arrays which means,
 all the elements of a list have the same type but there are two important differences.
