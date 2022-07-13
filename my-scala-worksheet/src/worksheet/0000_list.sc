@@ -1,3 +1,7 @@
+List(1 to 10).mkString(" ") // "Range 1 to 10" ???
+(1 to 10).toList.mkString(" ") // 1 2 3 4 5 6 7 8 9 10
+List(1, 3).mkString(" ")
+
 val lst = List(4, 38, 5, -3, 0, 7, -6, -6, 4, 38)
 val r1 = lst.dropWhile(x => x > 0) // List(-3, 0, 7, -6, -6, 4, 38)
 val r2 = lst.dropWhile(x => x < 0) // List(4, 38, 5, -3, 0, 7, -6, -6, 4, 38)
