@@ -1,3 +1,7 @@
+val str = "1912"
+str.slice(0, 1) + 'X' + str.slice(2, 4)
+
+
 val s = "10111"
 s(0)
 s(0).toInt
