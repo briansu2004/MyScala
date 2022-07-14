@@ -1,3 +1,11 @@
+Array(2, 0, 2, 5).slice(0, 0).mkString("") // ""
+Array(2, 0, 2, 5).slice(0, 1).mkString("") // 2
+Array(2, 0, 2, 5).slice(1, 4).mkString("") // 025
+Array(2, 0, 2, 5).slice(0, 3).mkString("") // 202
+Array(2, 0, 2, 5).slice(3, 4).mkString("") // 5
+Array(2, 0, 2, 5).slice(4, 4).mkString("") // ""
+
+
 val a = Array(12, 5, 7)
 a.map(x => if (x > 0) {
   "Positive"
