@@ -1,3 +1,7 @@
+"saveChangesInTheEditor".toCharArray
+
+'a' - 'A'
+
 val s = "aabcd"
 s.slice(0, 0) + s.slice(2, s.length)
 
