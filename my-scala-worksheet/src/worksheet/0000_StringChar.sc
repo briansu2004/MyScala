@@ -1,3 +1,6 @@
+val s = "aabcd"
+s.slice(0, 0) + s.slice(2, s.length)
+
 val str = "1912"
 str.slice(0, 1) + 'X' + str.slice(2, 4)
 
