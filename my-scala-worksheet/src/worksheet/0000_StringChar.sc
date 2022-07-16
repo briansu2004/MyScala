@@ -1,3 +1,13 @@
+"99100".slice(0, 1).toInt
+"99100".slice(0, 2).toInt
+
+"a" == "a"
+val s1 = "b"
+val s2 = "b"
+s1 == s2
+
+9.toString + 10.toString
+
 "We promptly judged antique ivory buckles for the prize".toLowerCase
 "We promptly judged antique ivory buckles for the prize".toLowerCase()
 
