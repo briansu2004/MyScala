@@ -1,3 +1,21 @@
+for (i <- "hackerrank") {
+  println(i)
+}
+
+"zhackerank".indexOf("r")
+"zhackerank".indexOf("r", 6)
+"zhackerank".indexOf("r", 7)
+
+"hereiamstackerrank".indexOf("h")
+"hereiamstackerrank".indexOf("h", 0)
+"hereiamstackerrank".indexOf("h", -1)
+"hereiamstackerrank".indexOf("a", "ahereiamstackerrank".indexOf("h"))
+
+val arr = "ahereiamstackerrank".toCharArray.filter(x => "hackerrank".contains(x))
+arr.indexOf('h')
+arr.indexOf('a', arr.indexOf('h'))
+
+
 "SOS" * 10
 
 "saveChangesInTheEditor".toCharArray
