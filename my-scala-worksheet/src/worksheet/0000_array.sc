@@ -1,3 +1,7 @@
+val arr = Array(4, 5, 3, 7, 2)
+val p = arr(0)
+arr.filter(x => x < p) ++ Array(p) ++ arr.filter(x => x > p)
+
 for (i <- Array(2, 0, 3, 5)) {
   println(i)
 }
