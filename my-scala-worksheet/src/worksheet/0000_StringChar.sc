@@ -1,3 +1,5 @@
+"SOS" * 10
+
 "saveChangesInTheEditor".toCharArray
 
 'a' - 'A'
