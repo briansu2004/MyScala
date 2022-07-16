@@ -1,3 +1,7 @@
+for (i <- Array(2, 0, 3, 5)) {
+  println(i)
+}
+
 Array(2, 0, 2, 5).slice(0, 0).mkString("") // ""
 Array(2, 0, 2, 5).slice(0, 1).mkString("") // 2
 Array(2, 0, 2, 5).slice(1, 4).mkString("") // 025

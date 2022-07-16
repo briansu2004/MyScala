@@ -1,3 +1,5 @@
+Set(3, 7, 10) + 1
+
 // Empty set of integer type
 var s1 : Set[Int] = Set()
 // Set of integer type

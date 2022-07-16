@@ -1,3 +1,6 @@
+"We promptly judged antique ivory buckles for the prize".toLowerCase
+"We promptly judged antique ivory buckles for the prize".toLowerCase()
+
 for (i <- "hackerrank") {
   println(i)
 }
