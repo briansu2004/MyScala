@@ -1,10 +1,7 @@
-val arr = Array(4, 5, 3, 7, 2)
-val p = arr(0)
-arr.filter(x => x < p) ++ Array(p) ++ arr.filter(x => x > p)
+Array(2, 3, 4, 2, 3, 6, 8, 4, 5).slice(0, 5).mkString("")
+Array(2, 3, 4, 2, 3, 6, 8, 4, 5).slice(1, 6).mkString("")
+Array(2, 3, 4, 2, 3, 6, 8, 4, 5).slice(2, 7).mkString("")
 
-for (i <- Array(2, 0, 3, 5)) {
-  println(i)
-}
 
 Array(2, 0, 2, 5).slice(0, 0).mkString("") // ""
 Array(2, 0, 2, 5).slice(0, 1).mkString("") // 2
@@ -13,6 +10,13 @@ Array(2, 0, 2, 5).slice(0, 3).mkString("") // 202
 Array(2, 0, 2, 5).slice(3, 4).mkString("") // 5
 Array(2, 0, 2, 5).slice(4, 4).mkString("") // ""
 
+val arr = Array(4, 5, 3, 7, 2)
+val p = arr(0)
+arr.filter(x => x < p) ++ Array(p) ++ arr.filter(x => x > p)
+
+for (i <- Array(2, 0, 3, 5)) {
+  println(i)
+}
 
 val a = Array(12, 5, 7)
 a.map(x => if (x > 0) {
