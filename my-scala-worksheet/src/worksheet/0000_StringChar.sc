@@ -1,3 +1,7 @@
+//val result = '9'.isLetter
+
+"ABCDEF".map(c => (c.toInt + 3).toChar)
+
 "99100".slice(0, 1).toInt
 "99100".slice(0, 2).toInt
 
