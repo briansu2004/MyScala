@@ -4,7 +4,7 @@ My Scala
 
 ## Scala 2 cheat sheet
 
-https://docs.scala-lang.org/cheatsheets/index.html
+<https://docs.scala-lang.org/cheatsheets/index.html>
 
 ## Variance : Covariance vs Contravariance vs Invariance
 
@@ -16,7 +16,7 @@ class Bar[-A] // A contravariant class
 class Baz[A]  // An invariant class
 ```
 
-https://docs.scala-lang.org/tour/variances.html
+<https://docs.scala-lang.org/tour/variances.html>
 
 ![](image/README/variance_01.png)
 
@@ -67,7 +67,7 @@ Update sbt
 
 Type Hierarchies in Scala
 
-https://www.baeldung.com/scala/type-hierarchies#:~:text=2.2.-,AnyVal,are%20an%20abstract%20final%20type.
+<https://www.baeldung.com/scala/type-hierarchies#:~:text=2.2.-,AnyVal,are%20an%20abstract%20final%20type>.
 
 ![](image/README/Scala_Any.png)
 
@@ -89,7 +89,7 @@ A type class is a group of types that satisfy a contract typically defined by a 
 
 Type Classes in Scala
 
-https://www.baeldung.com/scala/type-classes
+<https://www.baeldung.com/scala/type-classes>
 
 ### Scala: mkString
 
@@ -103,7 +103,7 @@ WorkSheet is very helpful.
 
 Monads in Scala
 
-https://www.baeldung.com/scala/monads
+<https://www.baeldung.com/scala/monads>
 
 In Scala, Monads is a construction which performs successive calculations. It is an object which covers the other object. It is worth noting that here, the output of an operation at some step is an input to another computations, which is a parent to the recent step of the program stated. Monad is neither a class nor a trait, it is a concept. The maximum collections of the Scala are Monads but not all the Monads are collections, there are several Monads which are containers like Options in Scala. In short, we can say that in Scala the data types that implements map as well as flatMap() like Options, Lists, etc. are called as Monads.
 
@@ -134,7 +134,7 @@ yield === map
 
 A Comprehensive Guide to For-Comprehension in Scala
 
-https://www.baeldung.com/scala/for-comprehension
+<https://www.baeldung.com/scala/for-comprehension>
 
 In imperative programming languages, we use loops such as for-loop and while-loop to iterate over collections. The Scala programming language introduced a new kind of loop: the for-comprehension.
 
@@ -199,7 +199,7 @@ yield === map
 ### Scala: ZIO Stream
 
 ZStream
-https://zio.dev/next/datatypes/stream/zstream/
+<https://zio.dev/next/datatypes/stream/zstream/>
 
 ZIO Chunk is a wrapper on Java array.
 
@@ -233,9 +233,9 @@ Python is not type safe. Some issues happen only in runtime - can't be identitie
 ### Scala: CATS
 
 Scala – Introduction to Cats
-https://www.baeldung.com/scala/cats-intro
+<https://www.baeldung.com/scala/cats-intro>
 
-https://github.com/typelevel/cats
+<https://github.com/typelevel/cats>
 
 ```scala
 libraryDependencies += "org.typelevel" %% "cats-core" % "2.2.0"
@@ -294,12 +294,6 @@ val res0: scala.collection.immutable.Map[Int,List[String]] = Map(1 -> List(a, c)
 ```
 
 ![](image/README/cats_01.png)
-
-## Questions to StackOverflow
-
-### Does Python have fo-comprehension?
-
-### Does JavaScript have fo-comprehension?
 
 ## 2022-02-19
 
@@ -561,7 +555,7 @@ curl -X DELETE localhost:9000/api/v1/todo/888
 
 ### GitBook
 
-https://app.gitbook.com/home
+<https://app.gitbook.com/home>
 
 ### Scala.js
 
@@ -780,7 +774,7 @@ IntelliJ -> Help -> Show Logs in Explorer -> C:\Users\...\AppData\Local\JetBrain
 
 ### ZIO
 
-https://www.youtube.com/watch?v=6A1SA5Be9qw
+<https://www.youtube.com/watch?v=6A1SA5Be9qw>
 
 How to live coding with ZIO?
 
@@ -817,7 +811,7 @@ Typeful, functional, streaming HTTP for Scala
 
 ### ZIO get started
 
-https://www.baeldung.com/scala/zio-intro
+<https://www.baeldung.com/scala/zio-intro>
 
 ## 2022-02-26
 
@@ -889,7 +883,7 @@ Scala code runner version 2.13.7 -- Copyright 2002-2021, LAMP/EPFL and Lightbend
 
 - VSCode Metals extension
 
-https://scalameta.org/metals/
+<https://scalameta.org/metals/>
 
 - VSCode Metals extension has many code samples:
 
@@ -1062,7 +1056,7 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9" % Test
 
 - Gitpod
 
-https://www.gitpod.io/
+<https://www.gitpod.io/>
 
 With Gitpod, you spin up fresh, automated dev environments for each task, in the cloud, in seconds.
 
@@ -1070,7 +1064,7 @@ With Gitpod, you spin up fresh, automated dev environments for each task, in the
 - Review a pull request? Start a new workspace.
 - Fix a bug in production? Start a new workspace.
 
-https://scalameta-gitpodg8-fs2wfv9whm9.ws-us34.gitpod.io/
+<https://scalameta-gitpodg8-fs2wfv9whm9.ws-us34.gitpod.io/>
 
 ![](image/README/gitpod_metals.png)
 
@@ -1138,3 +1132,8 @@ val printWriter = new PrintWriter(System.out);
 
 ![](image/README/redirect_input_from.png)
 
+## 2022-12-09
+
+IJ works with Microsoft Open JDK 17
+
+Add SDK - C:\Program Files\Microsoft\jdk-17.0.3.7-hotspot
