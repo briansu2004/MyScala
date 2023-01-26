@@ -2,6 +2,36 @@
 
 My Scala
 
+## ZIO + Spark = Zparkio
+
+<!-- https://www.reddit.com/r/scala/comments/e67f18/zio_spark_zparkio/ -->
+
+From leobenkel:
+
+I have been using ZIO in combination with Spark for a while now and the advantages are huge:
+
+Performance gain
+
+All sources can be fetch in parallel, no need to wait for the query to resolve.
+
+Architectural benefits
+
+You can put all your logic into closed for-comprehension
+
+Easy unit test
+
+Everything is testable since there is no side effects
+
+Retries
+
+just call `.retry(...)` and you can retry. No need to build anything extra.
+
+After discovering all this awesomeness, I wanted to share with the community.
+
+So, I wrote an open source library to help set up all the boilerplate needed to support ZIO and Spark together:
+
+<https://github.com/leobenkel/Zparkio>
+
 ## Scala 2 cheat sheet
 
 <https://docs.scala-lang.org/cheatsheets/index.html>
@@ -391,7 +421,7 @@ Play's lightweight, stateless, web-friendly architecture uses Akka and Akka Stre
 
 Play is non-opinionated about database access, and integrates with many object relational mapping (ORM) layers. It supports Anorm, Slick, and JPA out of the box, but many customers use NoSQL or other ORMs.
 
-```
+```dos
 [info] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 [info]   Java version is 17. Play supports only 8 and 11.
 [info] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -502,7 +532,7 @@ Change the JDK to v11.
 
 As we don’t need them, let’s remove HomeController.scala, index.scala.html, and main.scala.html files. Let’s also remove the existing content of the routes file.
 
-```
+```java
 @Singleton
 @Inject
 ```
@@ -527,7 +557,7 @@ sbt run
 
 Once it starts, it will automatically "refresh" itself with your code changes - but in the lazy way :-)
 
-```
+```dos
 curl localhost:9000/api/v1/todo
 curl localhost:9000/api/v1/todo/1
 curl -v -d '{"description": "some new item"}' -H 'Content-Type: application/json' -X POST localhost:9000/api/v1/todo
@@ -563,7 +593,7 @@ Looks like it is still worse than Angular and React.
 
 Scala.js + Play ? Use Angular, React instead?
 
-```
+```dos
 addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.9.0")
 ```
 
@@ -571,7 +601,7 @@ addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.9.0")
 
 ### Book: Scala With Cats
 
-```
+```dos
 scalaVersion := "2.13.1"
 libraryDependencies +=
 "org.typelevel" %% "cats-core" % "2.1.0"
@@ -580,11 +610,11 @@ scalacOptions ++= Seq(
 )
 ```
 
-```
+```dos
 sbt new scalawithcats/cats-seed.g8
 ```
 
-```
+```dos
 sbt new typelevel/sbt-catalysts.g8
 ```
 
@@ -602,7 +632,7 @@ package [sandbox]: com.sutek.scala.cats.sandbox
 Template applied in C:\Code\MyScala\.\scala-cats-simple
 ```
 
-```
+```dos
 C:\Code\MyScala>sbt new typelevel/sbt-catalysts.g8
 [info] welcome to sbt 1.5.8 (Oracle Corporation Java 11.0.12)
 [info] loading global plugins from C:\Users\...\.sbt\1.0\plugins
@@ -738,15 +768,15 @@ implicitly[JsonWriter[String]]
 // res5: JsonWriter[String] = repl.Session$App0$JsonWriterInstances$$anon$1@6fccdc48
 ```
 
-```
+```dos
 Json.toJson("A string!")
 ```
 
 The places where the compiler searches for candidate instances is known as the implicit scope. The implicit scope applies at the call site; that is the point where we call a method with an implicit parameter. The implicit scope which roughly consists of:
 
-    - local or inherited definitions;
-    - imported definitions;
-    - definitions in the companion object of the type class or the parameter type (in this case JsonWriter or String).
+- local or inherited definitions;
+- imported definitions;
+- definitions in the companion object of the type class or the parameter type (in this case JsonWriter or String).
 
 Definitions are only included in implicit scope if they are tagged with the implicit keyword.
 
@@ -788,7 +818,7 @@ ZIO can convert both synchronous and asynchronous side-effects into ZIO effects 
 
 A Future can be converted into a ZIO effect using ZIO.fromFuture.
 
-```
+```scala
 import scala.concurrent.Future
 
 lazy val future = Future.successful("Hello!")
@@ -829,11 +859,11 @@ FS2 is available for Scala 2.12, Scala 2.13, Scala 3, and Scala.js. FS2 is built
 
 - Check sbt version
 
-```
+```dos
 sbt sbtVersion
 ```
 
-```
+```dos
 C:\Code\MyScala>sbt sbtVersion
 [info] welcome to sbt 1.5.8 (Oracle Corporation Java 11.0.12)
 [info] loading global plugins from C:\Users\x239757\.sbt\1.0\plugins
@@ -844,11 +874,11 @@ C:\Code\MyScala>sbt sbtVersion
 
 or
 
-```
+```dos
 sbt about
 ```
 
-```
+```dos
 C:\Code\MyScala>sbt about
 [info] welcome to sbt 1.5.8 (Oracle Corporation Java 11.0.12)
 [info] loading global plugins from C:\Users\x239757\.sbt\1.0\plugins
@@ -872,11 +902,11 @@ C:\Code\MyScala>sbt about
 
 - How to check Scala version
 
-```
+```dos
 scala -version
 ```
 
-```
+```dos
 C:\Code\MyScala>scala -version
 Scala code runner version 2.13.7 -- Copyright 2002-2021, LAMP/EPFL and Lightbend, Inc.
 ```
@@ -889,7 +919,7 @@ Scala code runner version 2.13.7 -- Copyright 2002-2021, LAMP/EPFL and Lightbend
 
 i.e. ZIO HelloWorld
 
-```
+```scala
 package zio.project.seed
 
 import java.io.IOException
@@ -913,7 +943,7 @@ object HelloWorld extends App {
 
 Akka
 
-```
+```scala
 //#full-example
 package com.example
 
@@ -998,7 +1028,7 @@ object AkkaQuickstart extends App {
 
 akka sbt
 
-```
+```dos
 name := "akka-quickstart-scala"
 
 version := "1.0"
@@ -1023,7 +1053,7 @@ libraryDependencies ++= Seq(
 
 Scalatest
 
-```
+```scala
 object CubeCalculator extends App {
   def cube(x: Int) = {
     x * x * x
@@ -1031,7 +1061,7 @@ object CubeCalculator extends App {
 }
 ```
 
-```
+```scala
 class CubeCalculatorTest extends org.scalatest.funsuite.AnyFunSuite {
   test("CubeCalculator.cube") {
     assert(CubeCalculator.cube(3) === 27)
@@ -1041,7 +1071,7 @@ class CubeCalculatorTest extends org.scalatest.funsuite.AnyFunSuite {
 
 Scalatest sbt
 
-```
+```scala
 lazy val root = (project in file(".")).
   settings(
     inThisBuild(List(
@@ -1070,7 +1100,7 @@ With Gitpod, you spin up fresh, automated dev environments for each task, in the
 
 Tried to Open workspace from GitPod to VSCode Desktop but failed:
 
-```
+```dos
 [2/27/2022, 9:37:19 AM] open workspace window: vscode://gitpod.gitpod-desktop/workspace/gitpod-g8?%7B%22instanceId%22%3A%226e307514-280f-4181-9db0-19f72a0124a1%22%2C%22workspaceId%22%3A%22scalameta-gitpodg8-0ofi28oq54a%22%2C%22gitpodHost%22%3A%22https%3A%2F%2Fgitpod.io%22%7D
 [2/27/2022, 9:37:19 AM] acquiring lock: gitpod.io
 [2/27/2022, 9:37:19 AM] acquired lock: gitpod.io
