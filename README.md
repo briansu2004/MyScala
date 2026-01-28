@@ -3,6 +3,7 @@
 - [My Scala Projects](#my-scala-projects)
   - [Project 2](#project-2)
   - [Project 1](#project-1)
+- [How to use VSCode to code Scala in Windows 11](#how-to-use-vscode-to-code-scala-in-windows-11)
 
 <!-- [My Scala 2022](Scala2022.md) -->
 
@@ -43,3 +44,5 @@ Developed a Scala proof of concept (PoC) for a U.S. client, showcasing a full-st
 - Built a trading data analytics application for a financial services client, using Scala to parse and analyze large volumes of trading data files.
 
 - Automated generation of analytical reports highlighting the top 20 tickers and counterparties, supporting decision-making with insightful metrics and trends.
+
+## [How to use VSCode to code Scala in Windows 11](WinVSCodeScala/README.md)
