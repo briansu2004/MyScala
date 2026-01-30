@@ -4,6 +4,7 @@
   - [Project 2](#project-2)
   - [Project 1](#project-1)
 - [How to use VSCode to code Scala in Windows 11](#how-to-use-vscode-to-code-scala-in-windows-11)
+- [Step-by-Step: Create a Scala 3 + Hadoop 3 Stock Analysis Application on Windows 11 WSL Ubuntu](#step-by-step-create-a-scala-3--hadoop-3-stock-analysis-application-on-windows-11-wsl-ubuntu)
 
 <!-- [My Scala 2022](Scala2022.md) -->
 
@@ -46,3 +47,11 @@ Developed a Scala proof of concept (PoC) for a U.S. client, showcasing a full-st
 - Automated generation of analytical reports highlighting the top 20 tickers and counterparties, supporting decision-making with insightful metrics and trends.
 
 ## [How to use VSCode to code Scala in Windows 11](WinVSCodeScala/README.md)
+
+## Step-by-Step: Create a Scala 3 + Hadoop 3 Stock Analysis Application on Windows 11 WSL Ubuntu
+
+<!-- 
+~ 
+=>
+C:\Users\brian\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState\ext4.vhdx 
+-->

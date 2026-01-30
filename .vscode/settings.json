@@ -20,5 +20,8 @@
         "titleBar.inactiveForeground": "#15202b99",
         "commandCenter.border": "#15202b99"
     },
-    "peacock.color": "#fa74c5"
+    "peacock.color": "#fa74c5",
+    "files.watcherExclude": {
+        "**/target": true
+    }
 }
